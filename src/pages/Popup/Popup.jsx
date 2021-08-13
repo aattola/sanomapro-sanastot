@@ -29,11 +29,11 @@ const Popup = () => {
       {material.materialId && (
 
 
-        <IconButton  onClick={() => {
+        <IconButton size="small" onClick={() => {
           setView("selector")
           setMaterial({})
         }} aria-label="delete">
-          <ArrowBackIcon />
+          <ArrowBackIcon fontSize="inherit" />
         </IconButton>
       )}
 
@@ -41,7 +41,7 @@ const Popup = () => {
         <MaterialSelector setMaterial={setMaterial} setView={setView} />
       )}
 
-          {view === "viewer" && (
+      {view === "viewer" && (
         <MaterialViewer material={material} setView={setView} />
       )}
     </Container>
