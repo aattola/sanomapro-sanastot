@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 // import './Popup.css';
 
@@ -8,9 +8,11 @@ import MaterialViewer from './MaterialViewer.jsx'
 import styled from 'styled-components'
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import IconButton from '@material-ui/core/IconButton';
+import ErrorBoundary from './ErrorBoundary.jsx';
+import { Button } from '@material-ui/core';
 
 const Container = styled.div`
-  margin: 10px;
+  padding: 10px;
 `
 
 const BackButton = styled.div`
@@ -18,31 +20,68 @@ const BackButton = styled.div`
   font-size: 18px;
   width: fit-content;
 `
+const TopBar = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 16px;
 
+  margin-bottom: 10px;
+`
 
 const Popup = () => {
   const [view, setView] = useState('selector')
   const [material, setMaterial] = useState({})
+  const [tutorial, setTutorial] = useState(false)
+
+  useEffect(() => {
+    chrome.storage.sync.get('tutorial', function (data) {
+      if (!data.tutorial) {
+        setTutorial(true)
+      }
+    });
+  }, [])
 
   return (
     <Container>
-      {material.materialId && (
+      {tutorial ? (
+        <div style={{textAlign: "center"}}>
+          <h1>Infoa tästä</h1>
+          <p>Jos painat hiiren oikealla näppäimellä kirjaa niin se tallentuu lemppariksi ja jos oikealla klikkaat sitä uudelleen se menee pois lemppareista</p>
+          <p>Bugeja voi olla ja niin edespäin ilmota näistä tai älä.</p>
 
+          <Button variant="outlined" onClick={() => {
+            chrome.storage.sync.set({ tutorial: true });
+            setTutorial(false)
+          }}>OK Jatketaan</Button>
+        </div>
+      ) : (
+        <>
+          {material.materialId && (
+            <TopBar>
+              <IconButton size="small" onClick={() => {
+                setView("selector")
+                setMaterial({})
+              }} aria-label="delete">
+                <ArrowBackIcon fontSize="inherit" />
 
-        <IconButton size="small" onClick={() => {
-          setView("selector")
-          setMaterial({})
-        }} aria-label="delete">
-          <ArrowBackIcon fontSize="inherit" />
-        </IconButton>
-      )}
+              </IconButton>
+              <p style={{margin: 0}}>{material.materialTitle}</p>
+            </TopBar>
+          )}
 
-      {view === "selector" && (
-        <MaterialSelector setMaterial={setMaterial} setView={setView} />
-      )}
+          {view === "selector" && (
+            <ErrorBoundary>
+              <MaterialSelector setMaterial={setMaterial} setView={setView} />
+            </ErrorBoundary>
+          )}
 
-      {view === "viewer" && (
-        <MaterialViewer material={material} setView={setView} />
+          {view === "viewer" && (
+            <ErrorBoundary>
+              <MaterialViewer material={material} setView={setView} />
+            </ErrorBoundary>
+          )}
+        </>
       )}
     </Container>
   );

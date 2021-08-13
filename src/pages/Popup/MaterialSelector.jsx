@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import { Button } from '@material-ui/core'
+import Sifter from 'sifter'
 
 import useSWR from 'swr'
 import styled from 'styled-components'
 import Lockr from 'lockr'
 
 import TextField from '@material-ui/core/TextField'
+import CircularProgress from '@material-ui/core/CircularProgress'
 
 const Grid = styled.div`
   display: grid;
@@ -32,6 +33,11 @@ const MaterialCard = styled.button`
   outline: 0px solid black;
   border: 0px solid black;
   transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+
+  :active {
+    box-shadow: 0px 4px 28px rgb(0 0 0 / 10%), 0px 4px 10px rgb(0 0 0 / 11%) !important;
+    transform: translate3d(0px, 0px, 0px) !important;
+  }
 
   :hover {
     transform: translate3d(0px, -3px, 0px);
@@ -63,6 +69,8 @@ function useForceUpdate(){
 const MaterialSelector = ({ setMaterial, setView }) => {
   const { data, error } = useSWR('https://sanastot.sanomapro.fi/api/v1/materials')
   const forceUpdate = useForceUpdate();
+  const [results, setResults] = useState([])
+  const [errori, setError] = useState([])
   // const [view, setView] = useState('selector')
 
   function asetaMateriaali (materiaali) {
@@ -90,17 +98,40 @@ const MaterialSelector = ({ setMaterial, setView }) => {
     forceUpdate()
   }
 
-  if (error) return <div>failed to load</div>
-  if (!data) return <div>loading...</div>
+  if (error) return <div>Lataus ei onnannut</div>
+  if (!data) {
+    return (
+      <div style={{display: 'flex', alignItems: "center", alignContent: "center", height: 200, justifyContent: 'center'}}>
+        <CircularProgress />
+      </div>
+    )
+  }
 
   const fav = Lockr.getAll()
 
-
-  console.log(fav)
+  const sifter = new Sifter(data);
 
   return (
     <>
-      <TextField autoFocus label="Hae kirjoista" fullWidth variant="outlined" size="small" />
+      <TextField onChange={(e) => {
+        if (e.target.value === '') {
+          setError([])
+          return setResults([])
+        }
+        const result = sifter.search(e.target.value, {
+          fields: ['materialTitle'],
+          limit: 9
+        });
+
+        if (result.total === 0) return setError(["Jäbä mitään ei löytynyt"])
+        errori[0] && setError([])
+
+        const things = result.items.map(it => {
+          return data[it.id]
+        })
+        console.log(things, result)
+        setResults(things)
+      }} autoFocus label="Hae kirjoista" fullWidth variant="outlined" size="small" />
 
       {fav[0] && <Teksti>Lempparit:</Teksti>}
       <Grid style={{marginBottom: fav[0] ? "10px" : 0}}>
@@ -116,13 +147,23 @@ const MaterialSelector = ({ setMaterial, setView }) => {
       </Grid>
 
       <Teksti>Kirjat:</Teksti>
-      <Grid>
-        {data.map(material => (
-          <MaterialCard onContextMenu={(e) => handleContext(e, material)} onClick={() => asetaMateriaali(material)} image={material.coverImages.small.url} key={material.productId}>
-            {/* <p>{material.materialId}</p> */}
-          </MaterialCard>
-        ))}
-      </Grid>
+      {errori[0] ? (
+        <div style={{display: 'flex', alignItems: "center", alignContent: "center", minHeight: 150, justifyContent: 'center', textAlign: "center"}}>
+          <h2>{errori[0]}</h2>
+        </div>
+      ) : (
+        <Grid>
+          {results[0] ? results.map(material => (
+            <MaterialCard onContextMenu={(e) => handleContext(e, material)} onClick={() => asetaMateriaali(material)} image={material.coverImages.small.url} key={material.productId}>
+              {/* <p>{material.materialId}</p> */}
+            </MaterialCard>
+          )) : data.map(material => (
+            <MaterialCard onContextMenu={(e) => handleContext(e, material)} onClick={() => asetaMateriaali(material)} image={material.coverImages.small.url} key={material.productId}>
+              {/* <p>{material.materialId}</p> */}
+            </MaterialCard>
+          ))}
+        </Grid>
+      )}
     </>
   );
 };

@@ -25,6 +25,7 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-hot-loader": "^4.13.0",
+    "sifter": "^0.5.4",
     "styled-components": "^5.3.0",
     "swr": "^0.5.6"
   },

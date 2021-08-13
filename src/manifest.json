@@ -8,6 +8,8 @@
   "icons": {
     "128": "icon-128.png"
   },
+  "options_page": "options.html",
+  "permissions": ["storage"],
   "content_scripts": [
     {
       "matches": ["http://*/*", "https://*/*", "<all_urls>"],
@@ -15,7 +17,6 @@
       "css": ["content.styles.css"]
     }
   ],
-  "devtools_page": "devtools.html",
   "web_accessible_resources": [
     {
       "resources": ["content.styles.css", "icon-128.png", "icon-34.png"],
