@@ -1,26 +1,50 @@
-import React from 'react';
-import logo from '../../assets/img/logo.svg';
-import Greetings from '../../containers/Greetings/Greetings';
-import './Popup.css';
+import React, { useState } from 'react';
+
+// import './Popup.css';
+
+import MaterialSelector from './MaterialSelector.jsx'
+import MaterialViewer from './MaterialViewer.jsx'
+
+import styled from 'styled-components'
+import ArrowBackIcon from '@material-ui/icons/ArrowBack';
+import IconButton from '@material-ui/core/IconButton';
+
+const Container = styled.div`
+  margin: 10px;
+`
+
+const BackButton = styled.div`
+  cursor: pointer;
+  font-size: 18px;
+  width: fit-content;
+`
+
 
 const Popup = () => {
+  const [view, setView] = useState('selector')
+  const [material, setMaterial] = useState({})
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/pages/Popup/Popup.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React!
-        </a>
-      </header>
-    </div>
+    <Container>
+      {material.materialId && (
+
+
+        <IconButton  onClick={() => {
+          setView("selector")
+          setMaterial({})
+        }} aria-label="delete">
+          <ArrowBackIcon />
+        </IconButton>
+      )}
+
+      {view === "selector" && (
+        <MaterialSelector setMaterial={setMaterial} setView={setView} />
+      )}
+
+          {view === "viewer" && (
+        <MaterialViewer material={material} setView={setView} />
+      )}
+    </Container>
   );
 };
 
