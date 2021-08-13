@@ -47,6 +47,10 @@ const MaterialViewer = ({ material, setView, setLoading }) => {
 
   function handleChange (e) {
     setSearch(e.target.value)
+    if (e.target.value === "") {
+      setResults([])
+      return
+    }
     const result = sifter.search(e.target.value, {
       fields: ['head'],
       limit: 14
@@ -67,13 +71,13 @@ const MaterialViewer = ({ material, setView, setLoading }) => {
       <div style={{marginTop: 10}}>
         {search !== "" && !results[0] && (
           <div style={{display: 'flex', alignItems: "center", alignContent: "center", minHeight: 150, justifyContent: 'center', textAlign: "center"}}>
-            <h2>Mitään ei löytynyt</h2>
+            <p style={{fontSize: 14}}>Mitään ei löytynyt</p>
           </div>
         )}
 
         {search === "" && !results[0] && (
           <div style={{display: 'flex', alignItems: "center", alignContent: "center", minHeight: 150, justifyContent: 'center', textAlign: "center"}}>
-            <h2>Hae nyt jotain tosta</h2>
+            <p style={{fontSize: 14}}>Hae nyt jotain tosta</p>
           </div>
         )}
 
