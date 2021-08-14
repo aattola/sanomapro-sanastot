@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import useSWR from 'swr'
 import Sifter from 'sifter'
 import styled from 'styled-components'
+import Lockr from 'lockr'
 
 import TextField from '@material-ui/core/TextField'
 import CircularProgress from '@material-ui/core/CircularProgress'
@@ -15,7 +16,17 @@ const Result = styled.div`
 const MaterialViewer = ({ material, setView, setLoading }) => {
   const [search, setSearch] = useState('')
   const [results, setResults] = useState([])
-  const { data, error } = useSWR(`https://proxy.jeffe.workers.dev/?https://sanastot.sanomapro.fi/api/v1/material/${material.materialId}`)
+  const [mat, setMat] = useState({})
+  const { data: _data, error } = useSWR(`https://proxy.jeffe.workers.dev/?https://sanastot.sanomapro.fi/api/v1/material/${material.materialId}`)
+
+  useEffect(() => {
+    const materiaali = Lockr.get(material.materialId)
+    if (materiaali) {
+      setMat(materiaali)
+    }
+  }, [material.materialId])
+
+  const data = mat.bundleId ? mat : _data
 
   if (error) return <div>failed to load</div>
   if (!data) {
@@ -64,6 +75,9 @@ const MaterialViewer = ({ material, setView, setLoading }) => {
     setResults(things)
   }
 
+  Lockr.set(material.materialId, _data)
+
+
   return (
     <>
       <TextField value={search} onChange={handleChange} autoFocus label="Hae sanoja" fullWidth variant="outlined" size="small" />
@@ -81,8 +95,8 @@ const MaterialViewer = ({ material, setView, setLoading }) => {
           </div>
         )}
 
-        {results.map(res => (
-          <Result>
+        {results.map((res, i) => (
+          <Result key={i}>
             <p style={{margin: 4}}>{res.head}</p>
             <p style={{margin: 4}}>{res.translate}</p>
           </Result>

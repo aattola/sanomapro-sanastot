@@ -1,12 +1,8 @@
 {
   "name": "chrome-extension-boilerplate-react",
-  "version": "4.0.2",
+  "version": "4.0.3",
   "description": "Sanomapro sanastot kätevästi nettiselaimessa.",
   "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/lxieyang/chrome-extension-boilerplate-react.git"
-  },
   "scripts": {
     "build": "node utils/build.js",
     "start": "node utils/webserver.js",

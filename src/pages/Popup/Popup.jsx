@@ -10,6 +10,7 @@ import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import IconButton from '@material-ui/core/IconButton';
 import ErrorBoundary from './ErrorBoundary.jsx';
 import { Button } from '@material-ui/core';
+import Lockr from 'lockr'
 
 const Container = styled.div`
   padding: 10px;
@@ -32,6 +33,7 @@ const TopBar = styled.div`
 const Popup = () => {
   const [view, setView] = useState('selector')
   const [material, setMaterial] = useState({})
+  const [materials, setMaterials] = useState([])
   const [tutorial, setTutorial] = useState(false)
 
   useEffect(() => {
@@ -40,6 +42,14 @@ const Popup = () => {
         setTutorial(true)
       }
     });
+
+    const mat = Lockr.get("materials")
+
+    if (mat) {
+      console.log("[ASETIMME DATAA]", mat)
+      setMaterials(mat)
+    }
+
   }, [])
 
   return (
@@ -72,7 +82,7 @@ const Popup = () => {
 
           {view === "selector" && (
             <ErrorBoundary>
-              <MaterialSelector setMaterial={setMaterial} setView={setView} />
+              <MaterialSelector materials={materials} setMaterial={setMaterial} setView={setView} />
             </ErrorBoundary>
           )}
 

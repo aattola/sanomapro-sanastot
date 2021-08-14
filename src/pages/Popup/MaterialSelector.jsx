@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Sifter from 'sifter'
 
 import useSWR from 'swr'
@@ -54,7 +54,7 @@ const MaterialCard = styled.button`
 function contains(a, obj) {
     var i = a.length;
     while (i--) {
-       if (a[i].id === obj.materialId) {
+       if (a[i].id === obj.productId) {
            return true;
        }
     }
@@ -66,11 +66,31 @@ function useForceUpdate(){
     return () => setValue(value => value + 1); // update the state to force render
 }
 
+let menestystä = false
+
 const MaterialSelector = ({ setMaterial, setView }) => {
-  const { data, error } = useSWR('https://proxy.jeffe.workers.dev/?https://sanastot.sanomapro.fi/api/v1/materials')
+  const { data: dahta, error } = useSWR('https://proxy.jeffe.workers.dev/?https://sanastot.sanomapro.fi/api/v1/materials')
   const forceUpdate = useForceUpdate();
   const [results, setResults] = useState([])
   const [errori, setError] = useState([])
+  const [mat, setMat] = useState([])
+  const [data, setData] = useState([])
+
+  useEffect(() => {
+    const mat = Lockr.get("materials")
+    console.log(mat, "MATTRIa")
+    if (mat) {
+      setData(mat)
+    } else {
+      Lockr.set('materials', dahta)
+      setData(dahta)
+    }
+  }, [dahta])
+
+
+  // const data = mat[0] ? mat : dahta
+
+  console.log(data, !data)
   // const [view, setView] = useState('selector')
 
   function asetaMateriaali (materiaali) {
@@ -79,23 +99,26 @@ const MaterialSelector = ({ setMaterial, setView }) => {
   }
 
   function handleContext (e, material, add = true) {
+    menestystä = false
     e.preventDefault()
+    const favvorites = Lockr.get("favorites") ? Lockr.get("favorites") : []
     console.log(e, material, add)
-    if (!add) {
-      Lockr.rm(material.materialId)
+
+    favvorites.forEach((a, i) => {
+      if (a.productId !== material.productId) return
+
+      favvorites.splice(i, 1);
+      Lockr.set("favorites", favvorites)
       forceUpdate()
+      menestystä = true
       return
-    }
+    })
 
-    if (Lockr.get(material.materialId)) {
-      Lockr.rm(material.materialId)
+    if (!menestystä) {
+      favvorites.push(material)
+      Lockr.set("favorites", favvorites)
       forceUpdate()
-      return
     }
-
-    Lockr.set(material.materialId, {favorite: add, id: material.materialId})
-
-    forceUpdate()
   }
 
   if (error) return <div>Lataus ei onnannut</div>
@@ -107,9 +130,11 @@ const MaterialSelector = ({ setMaterial, setView }) => {
     )
   }
 
-  const fav = Lockr.getAll()
+  const fav = Lockr.get("favorites") ? Lockr.get("favorites") : []
 
   const sifter = new Sifter(data);
+
+  // Lockr.set('materials', dahta)
 
   return (
     <>
@@ -135,14 +160,14 @@ const MaterialSelector = ({ setMaterial, setView }) => {
 
       {fav[0] && <Teksti>Lempparit:</Teksti>}
       <Grid style={{marginBottom: fav[0] ? "10px" : 0}}>
-        {data.map(material => {
-          if (contains(fav, material)) {
+        {fav.map(material => {
+          {/* if (contains(fav, material)) { */}
             return (
               <MaterialCard onContextMenu={(e) => handleContext(e, material, false)} onClick={() => asetaMateriaali(material)} image={material.coverImages.small.url} key={material.productId}>
                 {/* <p>{material.materialId}</p> */}
               </MaterialCard>
             )
-          }
+          {/* } */}
         })}
       </Grid>
 
@@ -153,6 +178,7 @@ const MaterialSelector = ({ setMaterial, setView }) => {
         </div>
       ) : (
         <Grid>
+        {console.log("tääl", results[0], data)}
           {results[0] ? results.map(material => (
             <MaterialCard onContextMenu={(e) => handleContext(e, material)} onClick={() => asetaMateriaali(material)} image={material.coverImages.small.url} key={material.productId}>
               {/* <p>{material.materialId}</p> */}

@@ -53,6 +53,14 @@ const Options = (props: any) => {
       >
         Resetoi lisäosan muisti
       </Button>
+
+      <Button
+        onClick={() => {
+          window.localStorage.clear();
+        }}
+      >
+        Resetoi local storage
+      </Button>
     </div>
   );
 };
