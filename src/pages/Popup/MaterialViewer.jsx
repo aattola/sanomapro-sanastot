@@ -15,7 +15,7 @@ const Result = styled.div`
 const MaterialViewer = ({ material, setView, setLoading }) => {
   const [search, setSearch] = useState('')
   const [results, setResults] = useState([])
-  const { data, error } = useSWR(`https://sanastot.sanomapro.fi/api/v1/material/${material.materialId}`)
+  const { data, error } = useSWR(`https://proxy.jeffe.workers.dev/?https://sanastot.sanomapro.fi/api/v1/material/${material.materialId}`)
 
   if (error) return <div>failed to load</div>
   if (!data) {

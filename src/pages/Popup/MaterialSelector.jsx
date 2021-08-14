@@ -67,7 +67,7 @@ function useForceUpdate(){
 }
 
 const MaterialSelector = ({ setMaterial, setView }) => {
-  const { data, error } = useSWR('https://sanastot.sanomapro.fi/api/v1/materials')
+  const { data, error } = useSWR('https://proxy.jeffe.workers.dev/?https://sanastot.sanomapro.fi/api/v1/materials')
   const forceUpdate = useForceUpdate();
   const [results, setResults] = useState([])
   const [errori, setError] = useState([])

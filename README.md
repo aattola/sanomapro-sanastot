@@ -30,3 +30,7 @@ Firebase vaatii authentikoimisen. Api avaimet löytyvät sanasto applikaation l�
 3. ` yarn install`
 4. ` yarn start`
 5. Lataat build kansion chromeen ja alat miettimään mitä vaihdat
+
+# Avustaminen
+
+Jos haluat korjata bugeja tai lisää ominaisuuksia siitä vain.
