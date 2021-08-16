@@ -1,7 +1,7 @@
 {
   "name": "chrome-extension-boilerplate-react",
   "version": "4.0.3",
-  "description": "Sanomapro sanastot kätevästi nettiselaimessa.",
+  "description": "Sanomapro sanastot applikaation sanastot kätevästi chrome selaimessa. Sanastot lisäosa näyttää sinulle sanomapro kirjoista sanastot",
   "license": "MIT",
   "scripts": {
     "build": "node utils/build.js",
