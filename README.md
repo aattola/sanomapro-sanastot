@@ -2,9 +2,10 @@
 
 > Chrome lisäosana
 
-Tulee chromen kauppaan lähipäivinä
-nyt pystyy lataamaan ottamalla Sanastot.zip [tiedoston](https://github.com/jeffeeeee/sanomapro-sanastot/releases/latest) ja lisäämällä sen chromeen developer tilassa.
+Lataa tästä: [Chrome webstore](https://chrome.google.com/webstore/detail/sanastot/mpmiknlnhbaefinkddjddmbhaedjgeha)
 
+
+Tai pystyt lataamaan ottamalla Sanastot.zip [tiedoston](https://github.com/jeffeeeee/sanomapro-sanastot/releases/latest) ja lisäämällä sen chromeen developer tilassa.
 [Siitä](https://ui.vision/howto/install-chrome-extension-from-file) neuvot jos et osaa.
 
 # Sanastot API
