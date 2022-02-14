@@ -6,6 +6,7 @@ import Lockr from 'lockr'
 
 import TextField from '@material-ui/core/TextField'
 import CircularProgress from '@material-ui/core/CircularProgress'
+import Fuse from 'fuse.js';
 
 const Result = styled.div`
   display: flex;
@@ -42,18 +43,23 @@ const MaterialViewer = ({ material, setView, setLoading }) => {
   let daata2 = []
   data.alphaEntries.forEach(da => {
     if (!da.targs) {
-      daata2.push({ head: da.head, translate: '' })
+      // daata2.push({ head: da.head, translate: '' })
       return console.log("[WARNING] ei targ", da)
     }
 
     if (!da.targs[0]) {
-      daata2.push({ head: da.head, translate: '' })
+      // daata2.push({ head: da.head, translate: '' })
       return console.log("[WARNING] ei targ indeksiä", da)
     }
     daata2.push({ head: da.head, translate: da.targs[0].targ })
   })
 
   const daata = daata2
+
+  const fuse = new Fuse(daata2, {
+    keys: ['head', 'translate'],
+
+  })
   const sifter = new Sifter(daata);
 
   function handleChange (e) {
@@ -62,17 +68,22 @@ const MaterialViewer = ({ material, setView, setLoading }) => {
       setResults([])
       return
     }
-    const result = sifter.search(e.target.value, {
-      fields: ['head'],
+    const result = fuse.search(e.target.value, {
       limit: 14
-    });
-
-    const things = result.items.map(it => {
-      return daata[it.id]
     })
-    console.log(things, result, daata)
 
-    setResults(things)
+    // const result = sifter.search(e.target.value, {
+    //   fields: ['head'],
+    //   limit: 14
+    // });
+
+    // const things = result.map(it => {
+    //   return daata[it]
+    // })
+    // console.log(things, result, daata)
+
+    console.log(result)
+    setResults(result)
   }
 
   Lockr.set(material.materialId, _data)
@@ -91,14 +102,14 @@ const MaterialViewer = ({ material, setView, setLoading }) => {
 
         {search === "" && !results[0] && (
           <div style={{display: 'flex', alignItems: "center", alignContent: "center", minHeight: 150, justifyContent: 'center', textAlign: "center"}}>
-            <p style={{fontSize: 14}}>Hae nyt jotain tosta</p>
+            <p style={{fontSize: 14}}>Hae nyt jotain tosta ylempää.</p>
           </div>
         )}
 
-        {results.map((res, i) => (
-          <Result key={i}>
-            <p style={{margin: 4}}>{res.head}</p>
-            <p style={{margin: 4}}>{res.translate}</p>
+        {results.map((res) => (
+          <Result key={res.refIndex}>
+            <p style={{margin: 4}}>{res.item.head}</p>
+            <p style={{margin: 4}}>{res.item.translate}</p>
           </Result>
         ))}
       </div>

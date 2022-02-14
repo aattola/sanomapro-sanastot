@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import './Options.css';
 
 import Switch from '@material-ui/core/Switch';
@@ -33,7 +33,7 @@ const Options = (props: any) => {
 
       <FormControlLabel
         control={
-          loading === true ? (
+          loading ? (
             <p>Odotappa hetki</p>
           ) : (
             <Switch checked={checked} onChange={handleChange} />
