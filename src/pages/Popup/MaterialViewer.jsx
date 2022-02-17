@@ -18,7 +18,7 @@ const MaterialViewer = ({ material, setView, setLoading }) => {
   const [search, setSearch] = useState('')
   const [results, setResults] = useState([])
   const [mat, setMat] = useState({})
-  const { data: _data, error } = useSWR(`https://proxy.jeffe.workers.dev/?https://sanastot.sanomapro.fi/api/v1/material/${material.materialId}`)
+  const { data: _data, error } = useSWR(`https://proxy.jeffe.workers.dev/?https://sanastot.sanomapro.fi/api/v1/material/${material.materialId}`, {revalidateOnFocus: false})
 
   useEffect(() => {
     const materiaali = Lockr.get(material.materialId)

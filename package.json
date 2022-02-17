@@ -1,6 +1,6 @@
 {
-  "name": "chrome-extension-boilerplate-react",
-  "version": "4.1.2",
+  "name": "sanastot",
+  "version": "4.1.3",
   "description": "Sanomapro sanastot applikaation sanastot kätevästi chrome selaimessa.",
   "license": "MIT",
   "scripts": {
