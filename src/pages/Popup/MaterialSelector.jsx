@@ -69,7 +69,7 @@ function useForceUpdate(){
 let menestystä = false
 
 const MaterialSelector = ({ setMaterial, setView }) => {
-  const { data: dahta, error } = useSWR('https://proxy.jeffe.workers.dev/?https://sanastot.sanomapro.fi/api/v1/materials', {revalidateOnFocus: false})
+  const { data: dahta, error } = useSWR('https://sanastot.jeffe.workers.dev/sanastot', {revalidateOnFocus: false})
   const forceUpdate = useForceUpdate();
   const [results, setResults] = useState([])
   const [errori, setError] = useState([])
@@ -178,7 +178,6 @@ const MaterialSelector = ({ setMaterial, setView }) => {
         </div>
       ) : (
         <Grid>
-        {console.log("tääl", results[0], data)}
           {results[0] ? results.map(material => (
             <MaterialCard onContextMenu={(e) => handleContext(e, material)} onClick={() => asetaMateriaali(material)} image={material.coverImages.small.url} key={material.productId}>
               {/* <p>{material.materialId}</p> */}
