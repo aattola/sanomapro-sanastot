@@ -38,8 +38,6 @@ const MaterialViewer = ({ material, setView, setLoading }) => {
     )
   }
 
-  console.log("NETISTÄ DATAA", data)
-
   let daata2 = []
   data.alphaEntries.forEach(da => {
     if (!da.targs) {

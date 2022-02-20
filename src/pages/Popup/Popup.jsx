@@ -54,8 +54,8 @@ const Popup = () => {
 
   const inPopup = window.location.search.includes("popup") ? true : false
 
-  function test () {
-    chrome.windows.create({url: chrome.runtime.getURL("popup.html?popup=true"), type: "popup", width: 315})
+  function openInPopup () {
+    chrome.windows.create({url: chrome.runtime.getURL("popup.html?popup=true"), type: "popup", width: 320})
     window.close()
   }
 
@@ -92,7 +92,7 @@ const Popup = () => {
               <MaterialSelector materials={materials} setMaterial={setMaterial} setView={setView} />
               {!inPopup && (
                 <center>
-                  <Button variant="outlined" onClick={test}>Avaa uudessa ikkunassa</Button>
+                  <Button variant="outlined" onClick={openInPopup}>Avaa uudessa ikkunassa</Button>
                 </center>
               )}
             </ErrorBoundary>

@@ -78,7 +78,6 @@ const MaterialSelector = ({ setMaterial, setView }) => {
 
   useEffect(() => {
     const mat = Lockr.get("materials")
-    console.log(mat, "MATTRIa")
     if (mat) {
       setData(mat)
     } else {
@@ -88,10 +87,6 @@ const MaterialSelector = ({ setMaterial, setView }) => {
   }, [dahta])
 
 
-  // const data = mat[0] ? mat : dahta
-
-  console.log(data, !data)
-  // const [view, setView] = useState('selector')
 
   function asetaMateriaali (materiaali) {
     setMaterial(materiaali)
