@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ecaf6a0b-a02f-4b4c-b483-9e278dbd70ce" name="Changes" comment="Turhia console.logeja pois ja leveyttä popupille lisää">
-      <change afterPath="$PROJECT_DIR$/src/pages/Popup/SettingsView.jsx" afterDir="false" />
+    <list default="true" id="ecaf6a0b-a02f-4b4c-b483-9e278dbd70ce" name="Changes" comment="Material ui 4 =&gt; 5">
+      <change afterPath="$PROJECT_DIR$/.eslintrc.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.eslintrc" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Options/Options.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Options/Options.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Popup/MaterialSelector.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Popup/MaterialSelector.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Popup/MaterialViewer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Popup/MaterialViewer.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Popup/Popup.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Popup/Popup.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Popup/SettingsView.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Popup/SettingsView.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -91,7 +90,8 @@
       <workItem from="1629482341857" duration="719000" />
       <workItem from="1644847879444" duration="2837000" />
       <workItem from="1644850832116" duration="296000" />
-      <workItem from="1645453506958" duration="1206000" />
+      <workItem from="1645453506958" duration="1438000" />
+      <workItem from="1645455142711" duration="746000" />
     </task>
     <task id="LOCAL−00001" summary="Cloudflare worker sanoille ja alku fokus sanoille">
       <created>1645385396346</created>
@@ -111,7 +111,13 @@
       <option name="presentableId" value="LOCAL−00003" />
       <updated>1645385758994</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL−00004" summary="Material ui 4 =&gt; 5">
+      <created>1645454766532</created>
+      <option name="number" value="LOCAL−00004" />
+      <option name="presentableId" value="LOCAL−00004" />
+      <updated>1645454766532</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -132,7 +138,8 @@
     <MESSAGE value="Cloudflare worker sanoille ja alku fokus sanoille" />
     <MESSAGE value="Osoitteet uuteen serverless funktioon" />
     <MESSAGE value="Turhia console.logeja pois ja leveyttä popupille lisää" />
-    <option name="LAST_COMMIT_MESSAGE" value="Turhia console.logeja pois ja leveyttä popupille lisää" />
+    <MESSAGE value="Material ui 4 =&gt; 5" />
+    <option name="LAST_COMMIT_MESSAGE" value="Material ui 4 =&gt; 5" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
