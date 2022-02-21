@@ -6,11 +6,12 @@ import MaterialSelector from './MaterialSelector.jsx'
 import MaterialViewer from './MaterialViewer.jsx'
 
 import styled from 'styled-components'
-import ArrowBackIcon from '@material-ui/icons/ArrowBack';
-import IconButton from '@material-ui/core/IconButton';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import IconButton from '@mui/material/IconButton';
 import ErrorBoundary from './ErrorBoundary.jsx';
-import { Button } from '@material-ui/core';
+import { Button } from '@mui/material';
 import Lockr from 'lockr'
+import SettingsView from './SettingsView';
 
 const Container = styled.div`
   padding: 10px;
@@ -52,7 +53,7 @@ const Popup = () => {
 
   }, [])
 
-  const inPopup = window.location.search.includes("popup") ? true : false
+  const inPopup = window.location.search.includes("popup")
 
   function openInPopup () {
     chrome.windows.create({url: chrome.runtime.getURL("popup.html?popup=true"), type: "popup", width: 320})
@@ -101,6 +102,22 @@ const Popup = () => {
           {view === "viewer" && (
             <ErrorBoundary>
               <MaterialViewer material={material} setView={setView} />
+            </ErrorBoundary>
+          )}
+
+          {view === "settings" && (
+            <ErrorBoundary>
+              <TopBar>
+                <IconButton size="small" onClick={() => {
+                  setView("selector")
+                  setMaterial({})
+                }} aria-label="delete">
+                  <ArrowBackIcon fontSize="inherit" />
+
+                </IconButton>
+                <p style={{margin: 0}}>Asetukset</p>
+              </TopBar>
+              <SettingsView setView={setView} />
             </ErrorBoundary>
           )}
         </>

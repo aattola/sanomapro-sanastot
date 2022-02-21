@@ -1,20 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ecaf6a0b-a02f-4b4c-b483-9e278dbd70ce" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/jsLinters/eslint.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/markdown.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="ecaf6a0b-a02f-4b4c-b483-9e278dbd70ce" name="Changes" comment="Turhia console.logeja pois ja leveyttä popupille lisää">
+      <change afterPath="$PROJECT_DIR$/src/pages/Popup/SettingsView.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Options/Options.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Options/Options.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Popup/MaterialSelector.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Popup/MaterialSelector.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Popup/MaterialViewer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Popup/MaterialViewer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Popup/Popup.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Popup/Popup.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -27,13 +34,20 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
+  <component name="GitToolBoxStore">
+    <option name="projectConfigVersion" value="4" />
+  </component>
   <component name="MacroExpansionManager">
     <option name="directoryName" value="btwmwx1c" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+  </component>
   <component name="ProjectId" id="1x0BtWcZ8bFdnv5DejFBKBSh9qg" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="compactDirectories" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -48,12 +62,13 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.standard" value="" />
     <property name="nodejs_package_manager_path" value="yarn" />
-    <property name="settings.editor.selected.configurable" value="MTHome" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="settings.javascript.linters.eslint" />
     <property name="ts.external.directory.path" value="C:\Users\andre\Desktop\Koodia\Sanastot\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager">
-    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+    <configuration name="start" type="js.build_tools.npm" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
       <scripts>
@@ -64,11 +79,6 @@
       <envs />
       <method v="2" />
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="npm.start" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -81,7 +91,27 @@
       <workItem from="1629482341857" duration="719000" />
       <workItem from="1644847879444" duration="2837000" />
       <workItem from="1644850832116" duration="296000" />
+      <workItem from="1645453506958" duration="1206000" />
     </task>
+    <task id="LOCAL−00001" summary="Cloudflare worker sanoille ja alku fokus sanoille">
+      <created>1645385396346</created>
+      <option name="number" value="LOCAL−00001" />
+      <option name="presentableId" value="LOCAL−00001" />
+      <updated>1645385396346</updated>
+    </task>
+    <task id="LOCAL−00002" summary="Osoitteet uuteen serverless funktioon">
+      <created>1645385429621</created>
+      <option name="number" value="LOCAL−00002" />
+      <option name="presentableId" value="LOCAL−00002" />
+      <updated>1645385429621</updated>
+    </task>
+    <task id="LOCAL−00003" summary="Turhia console.logeja pois ja leveyttä popupille lisää">
+      <created>1645385758994</created>
+      <option name="number" value="LOCAL−00003" />
+      <option name="presentableId" value="LOCAL−00003" />
+      <updated>1645385758994</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -97,5 +127,15 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Cloudflare worker sanoille ja alku fokus sanoille" />
+    <MESSAGE value="Osoitteet uuteen serverless funktioon" />
+    <MESSAGE value="Turhia console.logeja pois ja leveyttä popupille lisää" />
+    <option name="LAST_COMMIT_MESSAGE" value="Turhia console.logeja pois ja leveyttä popupille lisää" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

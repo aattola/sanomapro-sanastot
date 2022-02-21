@@ -5,8 +5,8 @@ import useSWR from 'swr'
 import styled from 'styled-components'
 import Lockr from 'lockr'
 
-import TextField from '@material-ui/core/TextField'
-import CircularProgress from '@material-ui/core/CircularProgress'
+import TextField from '@mui/material/TextField'
+import CircularProgress from '@mui/material/CircularProgress'
 
 const Grid = styled.div`
   display: grid;
@@ -116,6 +116,10 @@ const MaterialSelector = ({ setMaterial, setView }) => {
     }
   }
 
+  function openSettings() {
+    setView("settings")
+  }
+
   if (error) return <div>Lataus ei onnannut</div>
   if (!data) {
     return (
@@ -166,7 +170,7 @@ const MaterialSelector = ({ setMaterial, setView }) => {
         })}
       </Grid>
 
-      <Teksti>Kirjat:</Teksti>
+      <Teksti onClick={openSettings}>Kirjat:</Teksti>
       {errori[0] ? (
         <div style={{display: 'flex', alignItems: "center", alignContent: "center", minHeight: 150, justifyContent: 'center', textAlign: "center"}}>
           <h2>{errori[0]}</h2>

@@ -4,8 +4,8 @@ import Sifter from 'sifter'
 import styled from 'styled-components'
 import Lockr from 'lockr'
 
-import TextField from '@material-ui/core/TextField'
-import CircularProgress from '@material-ui/core/CircularProgress'
+import TextField from '@mui/material/TextField'
+import CircularProgress from '@mui/material/CircularProgress'
 import Fuse from 'fuse.js';
 
 const Result = styled.div`

@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
 import './Options.css';
 
-import Switch from '@material-ui/core/Switch';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Button from '@material-ui/core/Button';
+import Switch from '@mui/material/Switch';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import Button from '@mui/material/Button';
 
 const Options = (props: any) => {
   const [checked, setChecked] = React.useState(false);
