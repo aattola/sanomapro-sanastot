@@ -17,7 +17,12 @@ const sanastoHandler: RouteHandler<Request> = async (req) => {
     });
   }
 
-  const res = await fetch(`https://sanastot.sanomapro.fi/api/v1/material/${params.id}`)
+  const res = await fetch(`https://sanastot.sanomapro.fi/api/v1/material/${params.id}`, {
+    cf: {
+      cacheTtl: 36100,
+      cacheEverything: true
+    }
+  })
   const data = await res.json<any>()
 
   if (!data) {

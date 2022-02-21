@@ -1,7 +1,12 @@
 import { Request, RouteHandler } from 'itty-router';
 
 const sanastotHandler: RouteHandler<Request> = async (req) => {
-  const res = await fetch('https://sanastot.sanomapro.fi/api/v1/materials');
+  const res = await fetch('https://sanastot.sanomapro.fi/api/v1/materials', {
+    cf: {
+      cacheTtl: 36100,
+      cacheEverything: true
+    }
+  });
   const data = await res.json<any[]>();
 
   const returnData = [
