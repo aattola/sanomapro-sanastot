@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 // import './Popup.css';
-
+import * as Sentry from '@sentry/react';
 import styled from 'styled-components'
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import IconButton from '@mui/material/IconButton';
@@ -46,14 +46,12 @@ function Popup() {
 
     const mat = Lockr.get('materials')
     const materialmodeToggle = localStorage.getItem('materialmode')
-    console.log(materialmodeToggle)
 
     if (materialmodeToggle) {
       setMaterialMode(true)
     }
 
     if (mat) {
-      console.log('[ASETIMME DATAA]', mat)
       setMaterials(mat)
     }
   }, [])
@@ -156,4 +154,4 @@ function Popup() {
   );
 }
 
-export default Popup;
+export default Sentry.withProfiler(Popup);

@@ -1,8 +1,9 @@
 import React from 'react'
 import {
   Alert,
-  AlertTitle, Button, Card, CardContent,
+  AlertTitle, Button,
 } from '@mui/material';
+import * as Sentry from '@sentry/react';
 
 class ErrorBoundary extends React.Component {
   constructor(props) {
@@ -18,6 +19,7 @@ class ErrorBoundary extends React.Component {
   componentDidCatch(error, errorInfo) {
     // You can also log the error to an error reporting service
     console.log('ERRORIHA SE ON', error, errorInfo);
+    Sentry.captureException(error)
   }
 
   render() {

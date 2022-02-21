@@ -51,16 +51,6 @@ const MaterialCard = styled.button`
   }
 `
 
-function contains(a, obj) {
-  let i = a.length;
-  while (i--) {
-    if (a[i].id === obj.productId) {
-      return true;
-    }
-  }
-  return false;
-}
-
 function useForceUpdate() {
   const [value, setValue] = useState(0); // integer state
   return () => setValue((value) => value + 1); // update the state to force render
@@ -95,7 +85,6 @@ function MaterialSelector({ setMaterial, setView }) {
     menestystä = false
     e.preventDefault()
     const favvorites = Lockr.get('favorites') ? Lockr.get('favorites') : []
-    console.log(e, material, add)
 
     favvorites.forEach((a, i) => {
       if (a.productId !== material.productId) return
@@ -152,7 +141,6 @@ function MaterialSelector({ setMaterial, setView }) {
           errori[0] && setError([])
 
           const things = result.items.map((it) => data[it.id])
-          console.log(things, result)
           setResults(things)
         }}
         autoFocus
