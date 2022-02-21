@@ -1,4 +1,8 @@
 import React from 'react'
+import {
+  Alert,
+  AlertTitle, Button, Card, CardContent,
+} from '@mui/material';
 
 class ErrorBoundary extends React.Component {
   constructor(props) {
@@ -13,17 +17,26 @@ class ErrorBoundary extends React.Component {
 
   componentDidCatch(error, errorInfo) {
     // You can also log the error to an error reporting service
-    console.log("ERRORIHA SE ON", error, errorInfo);
+    console.log('ERRORIHA SE ON', error, errorInfo);
   }
 
   render() {
     if (this.state.hasError) {
       // You can render any custom fallback UI
       return (
-        <div style={{background: "#ff8484", color: "#292929", borderRadius: 4, padding: 10}}>
-          <h1>Joku meni rikki koita uudelleen</h1>
-          <button onClick={() => window.location.reload()}>koitetaan uusiksi</button>
-        </div>
+        <>
+          <Alert
+            severity="error"
+          >
+            <AlertTitle>Virhe</AlertTitle>
+            Jokin meni rikki kunnolla —
+            {' '}
+            <strong>yritä uudelleen tai älä.</strong>
+          </Alert>
+          <center>
+            <Button variant="outlined" style={{ marginTop: 5 }} onClick={() => window.location.reload()}>Yritä uudelleen</Button>
+          </center>
+        </>
       );
     }
 

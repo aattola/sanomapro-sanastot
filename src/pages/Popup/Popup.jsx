@@ -35,6 +35,7 @@ function Popup() {
   const [material, setMaterial] = useState({})
   const [materials, setMaterials] = useState([])
   const [tutorial, setTutorial] = useState(false)
+  const [materialMode, setMaterialMode] = useState(false);
 
   useEffect(() => {
     chrome.storage.sync.get('tutorial', (data) => {
@@ -44,6 +45,12 @@ function Popup() {
     });
 
     const mat = Lockr.get('materials')
+    const materialmodeToggle = localStorage.getItem('materialmode')
+    console.log(materialmodeToggle)
+
+    if (materialmodeToggle) {
+      setMaterialMode(true)
+    }
 
     if (mat) {
       console.log('[ASETIMME DATAA]', mat)
@@ -60,6 +67,18 @@ function Popup() {
 
   return (
     <Container>
+      {materialMode && (
+        <video
+          style={{
+            width: '100vh', position: 'absolute', left: 0, top: 0, zIndex: -1,
+          }}
+          autoPlay
+          loop
+          muted
+        >
+          <source src={chrome.runtime.getURL('damn.mp4')} type="video/mp4" />
+        </video>
+      )}
       {tutorial ? (
         <div style={{ textAlign: 'center' }}>
           <h1>Infoa tästä</h1>

@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ecaf6a0b-a02f-4b4c-b483-9e278dbd70ce" name="Changes" comment="Material ui 4 =&gt; 5">
-      <change afterPath="$PROJECT_DIR$/.eslintrc.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.eslintrc" beforeDir="false" />
+    <list default="true" id="ecaf6a0b-a02f-4b4c-b483-9e278dbd70ce" name="Changes" comment="Uutta eslinttiä joka korjaa koodia">
+      <change afterPath="$PROJECT_DIR$/src/assets/img/damn.mp4" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Popup/ErrorBoundary.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Popup/ErrorBoundary.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Popup/MaterialSelector.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Popup/MaterialSelector.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Popup/Popup.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Popup/Popup.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Popup/Popup.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Popup/Popup.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Popup/SettingsView.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Popup/SettingsView.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,7 +93,9 @@
       <workItem from="1644847879444" duration="2837000" />
       <workItem from="1644850832116" duration="296000" />
       <workItem from="1645453506958" duration="1438000" />
-      <workItem from="1645455142711" duration="746000" />
+      <workItem from="1645455142711" duration="1237000" />
+      <workItem from="1645459185625" duration="1941000" />
+      <workItem from="1645465868841" duration="686000" />
     </task>
     <task id="LOCAL−00001" summary="Cloudflare worker sanoille ja alku fokus sanoille">
       <created>1645385396346</created>
@@ -117,7 +121,13 @@
       <option name="presentableId" value="LOCAL−00004" />
       <updated>1645454766532</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL−00005" summary="Uutta eslinttiä joka korjaa koodia">
+      <created>1645455943737</created>
+      <option name="number" value="LOCAL−00005" />
+      <option name="presentableId" value="LOCAL−00005" />
+      <updated>1645455943737</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -139,7 +149,8 @@
     <MESSAGE value="Osoitteet uuteen serverless funktioon" />
     <MESSAGE value="Turhia console.logeja pois ja leveyttä popupille lisää" />
     <MESSAGE value="Material ui 4 =&gt; 5" />
-    <option name="LAST_COMMIT_MESSAGE" value="Material ui 4 =&gt; 5" />
+    <MESSAGE value="Uutta eslinttiä joka korjaa koodia" />
+    <option name="LAST_COMMIT_MESSAGE" value="Uutta eslinttiä joka korjaa koodia" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
