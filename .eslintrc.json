@@ -3,10 +3,17 @@
         "browser": true,
         "es2021": true
     },
+    "settings": {
+        "import/resolver": {
+            "typescript": {}
+        }
+    },
+    "parser": "@typescript-eslint/parser",
     "extends": [
         "plugin:react/recommended",
         "react-app",
-        "airbnb"
+        "airbnb",
+        "plugin:@typescript-eslint/recommended"
     ],
     "parserOptions": {
         "ecmaFeatures": {
@@ -19,9 +26,19 @@
         "chrome": "readonly"
     },
     "plugins": [
-        "react"
+        "react",
+        "@typescript-eslint"
     ],
     "rules": {
+        "import/extensions": [
+            "error",
+            "ignorePackages",
+            {
+                "ts": "never",
+                "tsx": "never",
+                "jsx": "never"
+            }
+        ],
         "linebreak-style": "off",
         "semi": "off",
         "react/jsx-no-bind": "off",
@@ -30,6 +47,11 @@
         "consistent-return": "off",
         "no-plusplus": "off",
         "jsx-a11y/click-events-have-key-events" : "off",
-        "jsx-a11y/no-noninteractive-element-interactions": "off"
+        "jsx-a11y/no-noninteractive-element-interactions": "off",
+        "no-use-before-define": "off",
+        "@typescript-eslint/no-use-before-define": ["error"],
+        "react/jsx-filename-extension": [0, { "extensions": [".js", ".jsx"] }],
+        "import/prefer-default-export": "off",
+        "react/function-component-definition": "off"
     }
 }
