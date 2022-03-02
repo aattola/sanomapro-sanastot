@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion'
-import { Button, Switch, TextInput } from '@mantine/core';
-import { Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import styled from 'styled-components';
+import { Skeleton } from '@mantine/core';
 import { useMaterial } from '../hooks/useMaterial';
+import Material from '../components/Material';
 
 const animations = {
   initial: { x: 100 },
@@ -23,40 +24,32 @@ const Cont = styled.div`
 `
 
 const Dictionary = () => {
-  const [search, setSearch] = useState('')
-  const [checked, setChecked] = useState(false)
-  const data = useMaterial('on_track_5')
-  console.log(data)
+  const { id } = useParams()
+  const data = useMaterial((id as string))
+
+  useEffect(() => {
+    document.getElementById('containerTextfield')?.focus()
+  }, []);
 
   return (
     <motion.div
-      variants={animations}
-      initial="initial"
-      animate="animate"
-      exit="exit"
+      initial={{ x: 100, opacity: 0 }}
+      animate={{ x: 0, opacity: 1 }}
+      exit={{ x: -100, opacity: 0 }}
+      transition={{ duration: 0.2 }}
+      key="dictionary"
     >
-      <h1>tekstiä</h1>
+      {data ? (
+        <Material dictionary={data} />
+      ) : (
+        <>
+          <Skeleton height={15} radius="sm" />
+          <Skeleton style={{ marginTop: 10 }} height={15} radius="xl" />
+          <Skeleton style={{ marginTop: 10 }} height={15} radius="xl" />
+          <Skeleton style={{ marginTop: 10 }} height={15} radius="xl" />
+        </>
+      )}
 
-      <Switch checked={checked} onChange={(event) => setChecked(event.currentTarget.checked)} />
-
-      <Cont>
-        <motion.div animate={checked ? 'open' : 'closed'} variants={variants}>
-          <Button onClick={() => setChecked(false)}>O</Button>
-        </motion.div>
-        <TextInput
-          placeholder="Hae tästä"
-          variant="filled"
-          size="md"
-          required
-          value={search}
-          onChange={(event) => setSearch(event.currentTarget.value)}
-          style={{ marginBottom: 10, width: '100%' }}
-        />
-      </Cont>
-
-      <Link to="/">
-        <Button>Takaisin</Button>
-      </Link>
     </motion.div>
   );
 }

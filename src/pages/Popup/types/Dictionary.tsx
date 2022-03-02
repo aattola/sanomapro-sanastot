@@ -9,7 +9,7 @@ interface DictionaryTarg {
 
 interface DictionaryEntry {
   targs: DictionaryTarg[]
-  phons: any[]
+  phons: {phon: string}[] | []
   exmps: any[]
   sortKey: string
   games: boolean
@@ -28,6 +28,8 @@ interface DictionaryUnit {
   sections: DictionarySection
 }
 
+type Translation = {origin: string, translation: string, id: string}[]
+
 interface Dictionary {
   state: string;
   hidden: boolean;
@@ -44,6 +46,8 @@ interface Dictionary {
   coverImage: string;
   coverImages: MaterialCoverImage;
   units: DictionaryUnit[]
+  alphaEntries: DictionaryEntry[]
+  translations: Translation
 }
 
-export { Dictionary }
+export { Dictionary, DictionaryEntry, Translation }

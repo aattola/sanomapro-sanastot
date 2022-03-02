@@ -32,6 +32,8 @@
     "lodash": "^4.17.21",
     "lodash.debounce": "^4.0.8",
     "lodash.throttle": "^4.1.1",
+    "mobx": "^6.4.2",
+    "mobx-react": "^7.3.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-hot-loader": "^4.13.0",
@@ -40,7 +42,8 @@
     "sifter": "^0.5.4",
     "styled-components": "^5.3.0",
     "swr": "^0.5.6",
-    "typescript": "^4.6.2"
+    "typescript": "^4.6.2",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
     "@babel/core": "^7.12.17",
@@ -48,6 +51,7 @@
     "@babel/preset-env": "^7.12.17",
     "@babel/preset-react": "^7.12.13",
     "@types/styled-components": "^5.1.23",
+    "@types/uuid": "^8.3.4",
     "@typescript-eslint/eslint-plugin": "^5.13.0",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.2.2",

@@ -1,9 +1,11 @@
 import React from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { Skeleton } from '@mantine/core';
 import { MaterialCard, MaterialGrid } from '../styles/Materials';
 import { useMaterials } from '../hooks/useMaterials';
 import useSearch from '../hooks/useSearch';
+import searchStore from '../Stores/SearchStore';
 
 interface Props {
   search: string
@@ -30,14 +32,21 @@ function Materials({ search }: Props) {
     <AnimatePresence>
       <MaterialGrid>
         {books}
+        {!results[0] && !materials[0] && (
+          <>
+            <Skeleton height={120} mb="xl" />
+            <Skeleton height={120} mb="xl" />
+            <Skeleton height={120} mb="xl" />
+          </>
+        )}
       </MaterialGrid>
     </AnimatePresence>
   )
 }
 
 const Kirja: React.FC<{id: string}> = ({ id, children }) => (
-  <Link to={`/sanasto/${id}`}>
-    <motion.div initial={{ y: 10 }} animate={{ y: 0 }} layout>{children}</motion.div>
+  <Link to={`/sanasto/${id}`} onClick={() => searchStore.setSearch('')}>
+    <motion.div layout>{children}</motion.div>
   </Link>
 )
 

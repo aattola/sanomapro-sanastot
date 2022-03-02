@@ -36,17 +36,17 @@ if (fileSystem.existsSync(secretsPath)) {
 const options = {
   mode: process.env.NODE_ENV || 'development',
   entry: {
-    newtab: path.join(__dirname, 'src', 'pages', 'Newtab', 'index.jsx'),
+    // newtab: path.join(__dirname, 'src', 'pages', 'Newtab', 'index.jsx'),
     options: path.join(__dirname, 'src', 'pages', 'Options', 'index.jsx'),
     popup: path.join(__dirname, 'src', 'pages', 'Popup', 'index.tsx'),
-    background: path.join(__dirname, 'src', 'pages', 'Background', 'index.js'),
-    contentScript: path.join(__dirname, 'src', 'pages', 'Content', 'index.js'),
-    devtools: path.join(__dirname, 'src', 'pages', 'Devtools', 'index.js'),
-    panel: path.join(__dirname, 'src', 'pages', 'Panel', 'index.jsx'),
+    // background: path.join(__dirname, 'src', 'pages', 'Background', 'index.js'),
+    // contentScript: path.join(__dirname, 'src', 'pages', 'Content', 'index.js'),
+    // devtools: path.join(__dirname, 'src', 'pages', 'Devtools', 'index.js'),
+    // panel: path.join(__dirname, 'src', 'pages', 'Panel', 'index.jsx'),
   },
-  chromeExtensionBoilerplate: {
-    notHotReload: ['contentScript', 'devtools'],
-  },
+  // chromeExtensionBoilerplate: {
+  //   notHotReload: ['contentScript', 'devtools'],
+  // },
   output: {
     path: path.resolve(__dirname, 'build'),
     filename: '[name].bundle.js',
@@ -86,7 +86,15 @@ const options = {
         loader: 'html-loader',
         exclude: /node_modules/,
       },
-      { test: /\.(ts|tsx)$/, loader: 'ts-loader', exclude: /node_modules/ },
+      {
+        test: /\.(ts|tsx)$/,
+        loader: env.NODE_ENV === 'development' ? 'esbuild-loader' : 'ts-loader',
+        exclude: /node_modules/,
+        options: {
+          loader: 'tsx',
+          target: 'es2015',
+        },
+      },
       {
         test: /\.(js|jsx)$/,
         use: [

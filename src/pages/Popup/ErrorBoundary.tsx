@@ -1,9 +1,7 @@
 import React from 'react'
-import {
-  Alert,
-  AlertTitle, Button,
-} from '@mui/material';
 import * as Sentry from '@sentry/react';
+import { Alert, Button } from '@mantine/core';
+import ErrorOutlined from '@mui/icons-material/ErrorOutlined';
 
 class ErrorBoundary extends React.Component {
   constructor(props) {
@@ -26,19 +24,12 @@ class ErrorBoundary extends React.Component {
     if (this.state.hasError) {
       // You can render any custom fallback UI
       return (
-        <>
-          <Alert
-            severity="error"
-          >
-            <AlertTitle>Virhe</AlertTitle>
-            Jokin meni rikki kunnolla —
-            {' '}
-            <strong>yritä uudelleen tai älä.</strong>
-          </Alert>
-          <center>
-            <Button variant="outlined" style={{ marginTop: 5 }} onClick={() => window.location.reload()}>Yritä uudelleen</Button>
-          </center>
-        </>
+        <Alert icon={<ErrorOutlined size={16} />} title="Virhe" color="red">
+          Joku meni todella pahasti rikki. Voit yrittää uudelleen tai luovuttaa.
+          {' '}
+          <br />
+          <Button variant="outline" color="red" style={{ marginTop: 5 }} onClick={() => window.location.reload()}>Yritä uudelleen</Button>
+        </Alert>
       );
     }
 
