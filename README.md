@@ -11,7 +11,7 @@ Tai pystyt lataamaan ottamalla Sanastot.zip [tiedoston](https://github.com/jeffe
 # Building
 
 1. Copy repo
-2. Install NodeJS TLS and yarn
+2. Install NodeJS TLS and yarn (1.22.15)
 3. ` yarn install`
 4. ` yarn build` (tested with windows 10)
 5. Build files are in /packages/ and zip files are in /packages/build
