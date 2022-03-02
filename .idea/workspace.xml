@@ -1,26 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ecaf6a0b-a02f-4b4c-b483-9e278dbd70ce" name="Changes" comment="Rewrite typescriptillä alut">
-      <change afterPath="$PROJECT_DIR$/src/pages/Popup/Stores/SearchStore.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Popup/components/Material.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Popup/pages/Container.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Popup/pages/Settings.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Popup/styles/Material.tsx" afterDir="false" />
+    <list default="true" id="ecaf6a0b-a02f-4b4c-b483-9e278dbd70ce" name="Changes" comment="Uusi haku hienot animaatiot ja täydellinen cache">
+      <change afterPath="$PROJECT_DIR$/src/pages/Popup/components/Favorites.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/Popup/hooks/useFavorites.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Popup/ErrorBoundary.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Popup/ErrorBoundary.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Popup/Popup.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Popup/Popup.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Popup/components/Materials.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Popup/components/Materials.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Popup/hooks/useMaterial.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Popup/hooks/useMaterial.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Popup/hooks/useSearch.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Popup/hooks/useSearch.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Popup/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Popup/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Popup/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Popup/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Popup/pages/Dictionary.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Popup/pages/Dictionary.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Popup/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Popup/pages/Main.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Popup/types/Dictionary.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Popup/types/Dictionary.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Popup/pages/Main.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Popup/pages/Main.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,6 +101,8 @@
       <recent name="C:\Users\andre\Desktop\Koodia\Sanastot\src\pages\Popup" />
     </key>
     <key name="es6.move.members.recent.items">
+      <recent name="C:\Users\andre\Desktop\Koodia\Sanastot\src\pages\Popup\components\Favorites.tsx" />
+      <recent name="C:\Users\andre\Desktop\Koodia\Sanastot\src\pages\Popup\hooks\useFavorites.tsx" />
       <recent name="C:\Users\andre\Desktop\Koodia\Sanastot\src\pages\Popup\styles\Material.tsx" />
       <recent name="C:\Users\andre\Desktop\Koodia\Sanastot\src\pages\Popup\hooks\useMaterials.tsx" />
     </key>
@@ -165,7 +154,7 @@
       <workItem from="1645477849468" duration="190000" />
       <workItem from="1646159539875" duration="1354000" />
       <workItem from="1646160928653" duration="892000" />
-      <workItem from="1646161848206" duration="23211000" />
+      <workItem from="1646161848206" duration="26302000" />
     </task>
     <task id="LOCAL−00001" summary="Cloudflare worker sanoille ja alku fokus sanoille">
       <created>1645385396346</created>
@@ -227,7 +216,13 @@
       <option name="presentableId" value="LOCAL−00010" />
       <updated>1646174912355</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL−00011" summary="Uusi haku hienot animaatiot ja täydellinen cache">
+      <created>1646185763625</created>
+      <option name="number" value="LOCAL−00011" />
+      <option name="presentableId" value="LOCAL−00011" />
+      <updated>1646185763625</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -273,7 +268,8 @@
     <MESSAGE value="Versio 4.1.4 =&gt; 4.2.0" />
     <MESSAGE value="Worker: viikon pitkä cache sanomapro sanoille" />
     <MESSAGE value="Rewrite typescriptillä alut" />
-    <option name="LAST_COMMIT_MESSAGE" value="Rewrite typescriptillä alut" />
+    <MESSAGE value="Uusi haku hienot animaatiot ja täydellinen cache" />
+    <option name="LAST_COMMIT_MESSAGE" value="Uusi haku hienot animaatiot ja täydellinen cache" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

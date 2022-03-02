@@ -6,12 +6,14 @@ import { MaterialCard, MaterialGrid } from '../styles/Materials';
 import { useMaterials } from '../hooks/useMaterials';
 import useSearch from '../hooks/useSearch';
 import searchStore from '../Stores/SearchStore';
+import { Material } from '../types/Materials';
 
 interface Props {
   search: string
+  addFavorite: (event: React.MouseEvent, newFavorite: Material) => void;
 }
 
-function Materials({ search }: Props) {
+function Materials({ search, addFavorite }: Props) {
   const materials = useMaterials()
 
   const results = useSearch(materials, search, {
@@ -20,11 +22,11 @@ function Materials({ search }: Props) {
 
   const books = results[0] ? results.map((book) => (
     <Kirja id={book.item.materialId} key={book.item.materialId}>
-      <MaterialCard image={book.item.coverImage} />
+      <MaterialCard onContextMenu={(e) => addFavorite(e, book.item)} image={book.item.coverImage} />
     </Kirja>
   )) : materials.map((book) => (
     <Kirja id={book.materialId} key={book.materialId}>
-      <MaterialCard image={book.coverImage} />
+      <MaterialCard onContextMenu={(e) => addFavorite(e, book)} image={book.coverImage} />
     </Kirja>
   ))
 

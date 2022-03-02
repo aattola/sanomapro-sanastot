@@ -1,6 +1,6 @@
 import React from 'react';
 import { ActionIcon, Button } from '@mantine/core';
-import { motion } from 'framer-motion'
+import { motion } from 'framer-motion';
 
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
@@ -9,6 +9,8 @@ import Refresh from '@mui/icons-material/Refresh';
 import { useQueryClient } from 'react-query';
 import Materials from '../components/Materials';
 import searchStore from '../Stores/SearchStore';
+import { useFavorites } from '../hooks/useFavorites';
+import { Favorites } from '../components/Favorites';
 
 const Container = styled.div`
   display: flex;
@@ -24,12 +26,13 @@ const Teksti = styled.div`
 function MainPage() {
   const navigate = useNavigate()
   const queryClient = useQueryClient()
+  const { fav, addFavorite } = useFavorites()
 
   function refresh() {
     queryClient.resetQueries('materiaalit')
   }
 
-  const inPopup = !!window.location.search.includes('popup')
+  const inPopup = window.location.search.includes('popup')
 
   function popup() {
     chrome.windows.create({
@@ -46,13 +49,23 @@ function MainPage() {
       transition={{ duration: 0.2 }}
       key="main"
     >
+      {fav[0] && (
+        <Favorites
+          fav={fav}
+          addFavorite={addFavorite}
+          materials={fav}
+        />
+      )}
+
       <Container>
         <Teksti onClick={() => navigate('/asetukset')} style={{ width: 'min-content' }}>Kirjat:</Teksti>
         <ActionIcon onClick={refresh} size="sm" radius="xl">
           <Refresh fontSize="small" />
         </ActionIcon>
       </Container>
-      <Materials search={searchStore.search} />
+
+      <Materials search={searchStore.search} addFavorite={addFavorite} />
+
       {!inPopup && (
         <div>
           <Button variant="outline" onClick={popup}>Avaa uudessa ikkunassa</Button>
