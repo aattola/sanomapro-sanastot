@@ -19,3 +19,7 @@
 
 # secrets
 secrets.*.js
+
+/packages/firefox
+/packages/chrome
+/packages/build

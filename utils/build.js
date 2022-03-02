@@ -32,6 +32,8 @@ webpack(config, async (err, stats) => { // [Stats Object](#stats-object)
     fs.copyFile(path.resolve(__dirname, `../build/${iName}`), path.resolve(__dirname, `../packages/firefox/${iName}`))
   })
 
+  fs.copyFile(path.resolve(__dirname, '../packages/manifest_firefox.json'), path.resolve(__dirname, '../packages/firefox/manifest.json'))
+
   const output = fs2.createWriteStream(path.resolve(__dirname, '../packages/build/Firefox.zip'));
   const chromeOutput = fs2.createWriteStream(path.resolve(__dirname, '../packages/build/Chrome.zip'));
 
