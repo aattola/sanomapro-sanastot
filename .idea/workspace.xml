@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ecaf6a0b-a02f-4b4c-b483-9e278dbd70ce" name="Changes" comment="Firefoxille oma lisäosaversio">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="ecaf6a0b-a02f-4b4c-b483-9e278dbd70ce" name="Changes" comment="Template manifest firefoxille">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/build.js" beforeDir="false" afterPath="$PROJECT_DIR$/utils/build.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -147,7 +146,7 @@
       <workItem from="1646159539875" duration="1354000" />
       <workItem from="1646160928653" duration="892000" />
       <workItem from="1646161848206" duration="26664000" />
-      <workItem from="1646217430355" duration="10313000" />
+      <workItem from="1646217430355" duration="11305000" />
     </task>
     <task id="LOCAL−00001" summary="Cloudflare worker sanoille ja alku fokus sanoille">
       <created>1645385396346</created>
@@ -257,7 +256,13 @@
       <option name="presentableId" value="LOCAL−00018" />
       <updated>1646229048998</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL−00019" summary="Template manifest firefoxille">
+      <created>1646229233092</created>
+      <option name="number" value="LOCAL−00019" />
+      <option name="presentableId" value="LOCAL−00019" />
+      <updated>1646229233092</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -311,7 +316,8 @@
     <MESSAGE value="Lempparit kaksi kertaa listassa bugi pois" />
     <MESSAGE value="Parempi asetukset valikko ja tutoriaali" />
     <MESSAGE value="Firefoxille oma lisäosaversio" />
-    <option name="LAST_COMMIT_MESSAGE" value="Firefoxille oma lisäosaversio" />
+    <MESSAGE value="Template manifest firefoxille" />
+    <option name="LAST_COMMIT_MESSAGE" value="Template manifest firefoxille" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
