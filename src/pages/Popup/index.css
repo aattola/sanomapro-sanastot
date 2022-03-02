@@ -1,6 +1,6 @@
 body {
-  min-width: 300px;
-  height: 260px;
+  min-width: 320px;
+  height: 625px;
   margin: 0;
   font-family: 'Poppins', sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -16,10 +16,23 @@ code {
     monospace;
 }
 
+html {
+  scrollbar-width: none;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+
 ::-webkit-scrollbar {
-  width: 00px;
+  width: 0px;
   /* TÄÄ ESTÄÄ SCROLLERI */
   /* position: absolute; */
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
 
 /* Track */
