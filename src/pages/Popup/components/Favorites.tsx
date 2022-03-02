@@ -27,7 +27,15 @@ export function Favorites({
         },
       }}
     >
-      <Accordion.Item sx={{ borderBottom: '0px', padding: 0 }} label="Lempparit">
+      <Accordion.Item
+        sx={{
+          borderBottom: '0px',
+          '.mantine-Accordion-contentInner': {
+            padding: 0,
+          },
+        }}
+        label="Lempparit"
+      >
         <MaterialGrid>
           {materials && materials[0] && materials.map((item) => (
             <Link key={item.materialId} to={`/sanasto/${item.materialId}`} onClick={() => searchStore.setSearch('')}>

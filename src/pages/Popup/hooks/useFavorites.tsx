@@ -9,16 +9,17 @@ export function useFavorites() {
     e.preventDefault();
     const tempFav = [...fav];
 
-    if (!tempFav.includes(material)) {
-      tempFav.push(material);
-      setFav(tempFav);
-      Lockr.set('favorites', tempFav);
+    const includes = tempFav.filter((a) => a.materialId === material.materialId)
+    if (includes[0]) {
+      const filtered = tempFav.filter((item) => item.materialId !== material.materialId);
+      Lockr.set('favorites', filtered);
+      setFav(filtered);
       return;
     }
 
-    const filtered = tempFav.filter((item) => item.materialId !== material.materialId);
-    setFav(filtered);
-    Lockr.set('favorites', filtered);
+    tempFav.push(material);
+    Lockr.set('favorites', tempFav);
+    setFav(tempFav);
   }
 
   useEffect(() => {
