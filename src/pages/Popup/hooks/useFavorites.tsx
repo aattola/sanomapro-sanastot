@@ -22,7 +22,7 @@ export function useFavorites() {
   }
 
   useEffect(() => {
-    const localFavorites = Lockr.get('favorites') ? Lockr.get('favorites') : [];
+    const localFavorites: Material[] | [] = Lockr.get('favorites') ? Lockr.get('favorites') : [];
     setFav(localFavorites);
   }, []);
 
