@@ -1770,6 +1770,11 @@
   resolved "https://registry.npmjs.org/@types/json-schema/-/json-schema-7.0.9.tgz"
   integrity sha512-qcUXuemtEu+E5wZSJHNxUXeCZhAfXKQ41D+duX+VYPde7xyEVZci+/oXKJL13tnRs9lR2pr4fod59GT6/X1/yQ==
 
+"@types/lockr@^0.8.8":
+  version "0.8.8"
+  resolved "https://registry.yarnpkg.com/@types/lockr/-/lockr-0.8.8.tgz#0e0f27de2ef4b85dad3df85c7d31f9eafd6e88ee"
+  integrity sha512-1Gsl2b5jxPVSkbDErzxJ3fAd3WS+m8Fz0B6Y/PMIEOglZx2H3yd5D13qhmDWZURSWo2B42TJQ6SUtvbyBLDWWA==
+
 "@types/lodash@^4.14.178":
   version "4.14.178"
   resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.178.tgz#341f6d2247db528d4a13ddbb374bcdc80406f4f8"
