@@ -1,13 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ecaf6a0b-a02f-4b4c-b483-9e278dbd70ce" name="Changes" comment="Uusi haku hienot animaatiot ja täydellinen cache">
-      <change afterPath="$PROJECT_DIR$/src/pages/Popup/components/Favorites.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Popup/hooks/useFavorites.tsx" afterDir="false" />
+    <list default="true" id="ecaf6a0b-a02f-4b4c-b483-9e278dbd70ce" name="Changes" comment="Lempparit kaksi kertaa listassa bugi pois">
+      <change afterPath="$PROJECT_DIR$/src/assets/img/store440x280Thing.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/Popup/pages/Tutorial.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/Popup/types/Settings.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Popup/components/Materials.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Popup/components/Materials.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/store440x280.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/store440x280.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Options/Options.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Options/Options.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Popup/Popup.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Popup/Popup.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Popup/components/Material.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Popup/components/Material.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Popup/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Popup/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Popup/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Popup/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Popup/pages/Main.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Popup/pages/Main.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Popup/pages/Settings.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Popup/pages/Settings.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Popup/styles/Material.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Popup/styles/Material.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -154,7 +164,8 @@
       <workItem from="1645477849468" duration="190000" />
       <workItem from="1646159539875" duration="1354000" />
       <workItem from="1646160928653" duration="892000" />
-      <workItem from="1646161848206" duration="26302000" />
+      <workItem from="1646161848206" duration="26664000" />
+      <workItem from="1646217430355" duration="6890000" />
     </task>
     <task id="LOCAL−00001" summary="Cloudflare worker sanoille ja alku fokus sanoille">
       <created>1645385396346</created>
@@ -222,7 +233,37 @@
       <option name="presentableId" value="LOCAL−00011" />
       <updated>1646185763625</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL−00012" summary="Systeemi joka tallentaa lempparit">
+      <created>1646188832372</created>
+      <option name="number" value="LOCAL−00012" />
+      <option name="presentableId" value="LOCAL−00012" />
+      <updated>1646188832372</updated>
+    </task>
+    <task id="LOCAL−00013" summary="Lockr typet">
+      <created>1646188891570</created>
+      <option name="number" value="LOCAL−00013" />
+      <option name="presentableId" value="LOCAL−00013" />
+      <updated>1646188891570</updated>
+    </task>
+    <task id="LOCAL−00014" summary="Virheellinen type roskiin">
+      <created>1646188934919</created>
+      <option name="number" value="LOCAL−00014" />
+      <option name="presentableId" value="LOCAL−00014" />
+      <updated>1646188934919</updated>
+    </task>
+    <task id="LOCAL−00015" summary="Eslint iloiseksi näillä jekuilla">
+      <created>1646189089392</created>
+      <option name="number" value="LOCAL−00015" />
+      <option name="presentableId" value="LOCAL−00015" />
+      <updated>1646189089392</updated>
+    </task>
+    <task id="LOCAL−00016" summary="Lempparit kaksi kertaa listassa bugi pois">
+      <created>1646217969235</created>
+      <option name="number" value="LOCAL−00016" />
+      <option name="presentableId" value="LOCAL−00016" />
+      <updated>1646217969235</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -269,7 +310,12 @@
     <MESSAGE value="Worker: viikon pitkä cache sanomapro sanoille" />
     <MESSAGE value="Rewrite typescriptillä alut" />
     <MESSAGE value="Uusi haku hienot animaatiot ja täydellinen cache" />
-    <option name="LAST_COMMIT_MESSAGE" value="Uusi haku hienot animaatiot ja täydellinen cache" />
+    <MESSAGE value="Systeemi joka tallentaa lempparit" />
+    <MESSAGE value="Lockr typet" />
+    <MESSAGE value="Virheellinen type roskiin" />
+    <MESSAGE value="Eslint iloiseksi näillä jekuilla" />
+    <MESSAGE value="Lempparit kaksi kertaa listassa bugi pois" />
+    <option name="LAST_COMMIT_MESSAGE" value="Lempparit kaksi kertaa listassa bugi pois" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

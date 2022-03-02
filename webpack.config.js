@@ -6,6 +6,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const env = require('./utils/env');
+const package = require('./package.json')
 
 const ASSET_PATH = process.env.ASSET_PATH || '/';
 
@@ -88,7 +89,7 @@ const options = {
       },
       {
         test: /\.(ts|tsx)$/,
-        loader: env.NODE_ENV === 'development' ? 'esbuild-loader' : 'ts-loader',
+        loader: 'esbuild-loader',
         exclude: /node_modules/,
         options: {
           loader: 'tsx',
@@ -179,6 +180,15 @@ const options = {
         },
       ],
     }),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: 'src/assets/img/store440x280.png',
+          to: path.join(__dirname, 'build'),
+          force: true,
+        },
+      ],
+    }),
     new HtmlWebpackPlugin({
       template: path.join(__dirname, 'src', 'pages', 'Newtab', 'index.html'),
       filename: 'newtab.html',
@@ -208,6 +218,10 @@ const options = {
       filename: 'panel.html',
       chunks: ['panel'],
       cache: false,
+    }),
+    new webpack.DefinePlugin({
+      NODE_ENV: JSON.stringify(process.env.NODE_ENV || 'development'),
+      version: JSON.stringify(package.version),
     }),
   ],
   infrastructureLogging: {

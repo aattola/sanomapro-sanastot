@@ -6,6 +6,8 @@ import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
 import { observer } from 'mobx-react';
 import Refresh from '@mui/icons-material/Refresh';
+import SettingsIcon from '@mui/icons-material/Settings';
+
 import { useQueryClient } from 'react-query';
 import Materials from '../components/Materials';
 import searchStore from '../Stores/SearchStore';
@@ -59,9 +61,14 @@ function MainPage() {
 
       <Container>
         <Teksti onClick={() => navigate('/asetukset')} style={{ width: 'min-content' }}>Kirjat:</Teksti>
-        <ActionIcon onClick={refresh} size="sm" radius="xl">
-          <Refresh fontSize="small" />
-        </ActionIcon>
+        <div style={{ display: 'flex', gap: 2 }}>
+          <ActionIcon onClick={() => navigate('/asetukset')} size="sm" radius="xl">
+            <SettingsIcon fontSize="small" />
+          </ActionIcon>
+          <ActionIcon onClick={refresh} size="sm" radius="xl">
+            <Refresh fontSize="small" />
+          </ActionIcon>
+        </div>
       </Container>
 
       <Materials search={searchStore.search} addFavorite={addFavorite} />

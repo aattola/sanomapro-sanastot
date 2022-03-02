@@ -22,8 +22,8 @@ const Material = ({ dictionary }: Props) => {
 
   const translations = results.map((result) => (
     <Result key={result.item.id}>
-      <Paragraph>{result.item.origin}</Paragraph>
-      <Paragraph>{result.item.translation}</Paragraph>
+      <Paragraph onClick={() => navigator.clipboard.writeText(result.item.origin)}>{result.item.origin}</Paragraph>
+      <Paragraph onClick={() => navigator.clipboard.writeText(result.item.translation)}>{result.item.translation}</Paragraph>
     </Result>
   ))
 
@@ -34,7 +34,7 @@ const Material = ({ dictionary }: Props) => {
           <p>Hae sanoja tuosta ylhäältä</p>
         )}
         {!translations[0] && searchStore.search !== '' && (
-          <p>Ei löytynyt</p>
+          <p>Ei löytynyt mitään.</p>
         )}
       </div>
       {translations}

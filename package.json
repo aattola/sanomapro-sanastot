@@ -15,7 +15,7 @@
     "@mantine/core": "^3.6.12",
     "@mantine/hooks": "^3.6.12",
     "@mui/icons-material": "^5.4.2",
-    "@mui/material": "^5.4.2",
+    "@mui/material": "^5.4.4",
     "@mui/styles": "^5.4.2",
     "@sentry/react": "^6.17.9",
     "@sentry/tracing": "^6.17.9",
