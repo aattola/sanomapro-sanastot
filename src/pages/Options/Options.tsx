@@ -1,16 +1,14 @@
 import React, { useEffect } from 'react';
 import './Options.css';
 
-import Switch from '@mui/material/Switch';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Button from '@mui/material/Button';
+import { Button } from '@mantine/core'
 
 const Options = (props: any) => {
   const [checked, setChecked] = React.useState(false);
   const [loading, setLoading] = React.useState(true);
 
   useEffect(() => {
-    chrome.storage.sync.get('dev', function (data) {
+    chrome.storage.sync.get('dev', (data) => {
       setChecked(data.dev);
       setLoading(false);
     });
@@ -19,8 +17,8 @@ const Options = (props: any) => {
   const handleChange = (event: any) => {
     setChecked(event.target.checked);
 
-    chrome.storage.sync.set({ dev: event.target.checked }, function () {
-      console.log('dev is set to ' + event.target.checked);
+    chrome.storage.sync.set({ dev: event.target.checked }, () => {
+      console.log(`dev is set to ${event.target.checked}`);
     });
   };
 
@@ -30,17 +28,6 @@ const Options = (props: any) => {
       className="OptionsContainer"
     >
       <h1>Asetukset</h1>
-
-      <FormControlLabel
-        control={
-          loading ? (
-            <p>Odotappa hetki</p>
-          ) : (
-            <Switch checked={checked} onChange={handleChange} />
-          )
-        }
-        label="Postaa konsole täyteen tavaraa"
-      />
 
       <Button
         onClick={() => {
@@ -55,6 +42,7 @@ const Options = (props: any) => {
       </Button>
 
       <Button
+        style={{ marginTop: 10 }}
         onClick={() => {
           window.localStorage.clear();
         }}

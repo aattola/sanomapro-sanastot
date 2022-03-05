@@ -3,12 +3,14 @@ import React from 'react';
 import { render } from 'react-dom';
 import * as Sentry from '@sentry/react';
 import { BrowserTracing } from '@sentry/tracing';
+// eslint-disable-next-line import/no-unresolved
 import {} from 'styled-components/cssprop'
 import { MantineProvider } from '@mantine/core';
 
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { createWebStoragePersistor } from 'react-query/createWebStoragePersistor-experimental';
 import { persistQueryClient } from 'react-query/persistQueryClient-experimental'
+import { ReactQueryDevtools } from 'react-query/devtools'
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
@@ -28,7 +30,8 @@ Sentry.init({
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
-      cacheTime: 1000 * 60 * 60 * 24, // 24 hours
+      refetchOnWindowFocus: false,
+      cacheTime: 1000 * 60 * 60 * 24 * 5, // 24 hours * 5 = 5 päivää
     },
   },
 })
@@ -46,6 +49,8 @@ render(
       <MantineProvider theme={{ colorScheme: 'light' }}>
         <Popup />
       </MantineProvider>
+
+      <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
   ), window.document.querySelector('#app-container'),
 );

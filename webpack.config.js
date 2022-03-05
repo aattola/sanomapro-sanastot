@@ -6,6 +6,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const env = require('./utils/env');
+const package = require('./package.json')
 
 const ASSET_PATH = process.env.ASSET_PATH || '/';
 
@@ -36,17 +37,17 @@ if (fileSystem.existsSync(secretsPath)) {
 const options = {
   mode: process.env.NODE_ENV || 'development',
   entry: {
-    newtab: path.join(__dirname, 'src', 'pages', 'Newtab', 'index.jsx'),
+    // newtab: path.join(__dirname, 'src', 'pages', 'Newtab', 'index.jsx'),
     options: path.join(__dirname, 'src', 'pages', 'Options', 'index.jsx'),
     popup: path.join(__dirname, 'src', 'pages', 'Popup', 'index.tsx'),
-    background: path.join(__dirname, 'src', 'pages', 'Background', 'index.js'),
-    contentScript: path.join(__dirname, 'src', 'pages', 'Content', 'index.js'),
-    devtools: path.join(__dirname, 'src', 'pages', 'Devtools', 'index.js'),
-    panel: path.join(__dirname, 'src', 'pages', 'Panel', 'index.jsx'),
+    // background: path.join(__dirname, 'src', 'pages', 'Background', 'index.js'),
+    // contentScript: path.join(__dirname, 'src', 'pages', 'Content', 'index.js'),
+    // devtools: path.join(__dirname, 'src', 'pages', 'Devtools', 'index.js'),
+    // panel: path.join(__dirname, 'src', 'pages', 'Panel', 'index.jsx'),
   },
-  chromeExtensionBoilerplate: {
-    notHotReload: ['contentScript', 'devtools'],
-  },
+  // chromeExtensionBoilerplate: {
+  //   notHotReload: ['contentScript', 'devtools'],
+  // },
   output: {
     path: path.resolve(__dirname, 'build'),
     filename: '[name].bundle.js',
@@ -86,7 +87,15 @@ const options = {
         loader: 'html-loader',
         exclude: /node_modules/,
       },
-      { test: /\.(ts|tsx)$/, loader: 'ts-loader', exclude: /node_modules/ },
+      {
+        test: /\.(ts|tsx)$/,
+        loader: 'esbuild-loader',
+        exclude: /node_modules/,
+        options: {
+          loader: 'tsx',
+          target: 'es2015',
+        },
+      },
       {
         test: /\.(js|jsx)$/,
         use: [
@@ -171,6 +180,15 @@ const options = {
         },
       ],
     }),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: 'src/assets/img/store440x280.png',
+          to: path.join(__dirname, 'build'),
+          force: true,
+        },
+      ],
+    }),
     new HtmlWebpackPlugin({
       template: path.join(__dirname, 'src', 'pages', 'Newtab', 'index.html'),
       filename: 'newtab.html',
@@ -200,6 +218,10 @@ const options = {
       filename: 'panel.html',
       chunks: ['panel'],
       cache: false,
+    }),
+    new webpack.DefinePlugin({
+      NODE_ENV: JSON.stringify(process.env.NODE_ENV || 'development'),
+      version: JSON.stringify(package.version),
     }),
   ],
   infrastructureLogging: {

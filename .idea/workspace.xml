@@ -1,27 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ecaf6a0b-a02f-4b4c-b483-9e278dbd70ce" name="Changes" comment="Worker: viikon pitkä cache sanomapro sanoille">
-      <change afterPath="$PROJECT_DIR$/.eslintignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Popup/Popup.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Popup/components/Materials.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Popup/hooks/useMaterial.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Popup/hooks/useMaterials.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Popup/hooks/useSearch.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Popup/pages/Dictionary.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Popup/pages/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Popup/styles/Materials.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Popup/types/Dictionary.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Popup/types/Materials.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.eslintrc.json" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+    <list default="true" id="ecaf6a0b-a02f-4b4c-b483-9e278dbd70ce" name="Changes" comment="Template manifest firefoxille">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Popup/Popup.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Popup/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Popup/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +19,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitSEFilterConfiguration">
@@ -49,6 +36,29 @@
   </component>
   <component name="GitToolBoxStore">
     <option name="projectConfigVersion" value="4" />
+    <option name="recentBranches">
+      <RecentBranches>
+        <option name="branchesForRepo">
+          <list>
+            <RecentBranchesForRepo>
+              <option name="branches">
+                <list>
+                  <RecentBranch>
+                    <option name="branchName" value="ts-rewrite" />
+                    <option name="lastUsedInstant" value="1646175022" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="main" />
+                    <option name="lastUsedInstant" value="1646175021" />
+                  </RecentBranch>
+                </list>
+              </option>
+              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$" />
+            </RecentBranchesForRepo>
+          </list>
+        </option>
+      </RecentBranches>
+    </option>
   </component>
   <component name="MacroExpansionManager">
     <option name="directoryName" value="btwmwx1c" />
@@ -87,11 +97,14 @@
       <recent name="C:\Users\andre\Desktop\Koodia\Sanastot\src\pages\Popup" />
     </key>
     <key name="es6.move.members.recent.items">
+      <recent name="C:\Users\andre\Desktop\Koodia\Sanastot\src\pages\Popup\components\Favorites.tsx" />
+      <recent name="C:\Users\andre\Desktop\Koodia\Sanastot\src\pages\Popup\hooks\useFavorites.tsx" />
+      <recent name="C:\Users\andre\Desktop\Koodia\Sanastot\src\pages\Popup\styles\Material.tsx" />
       <recent name="C:\Users\andre\Desktop\Koodia\Sanastot\src\pages\Popup\hooks\useMaterials.tsx" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.start">
-    <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="npm.build">
+    <configuration name="build" type="js.build_tools.npm" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
       <scripts>
@@ -112,11 +125,6 @@
       <envs />
       <method v="2" />
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="npm.build" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -137,7 +145,8 @@
       <workItem from="1645477849468" duration="190000" />
       <workItem from="1646159539875" duration="1354000" />
       <workItem from="1646160928653" duration="892000" />
-      <workItem from="1646161848206" duration="12368000" />
+      <workItem from="1646161848206" duration="26664000" />
+      <workItem from="1646217430355" duration="11305000" />
     </task>
     <task id="LOCAL−00001" summary="Cloudflare worker sanoille ja alku fokus sanoille">
       <created>1645385396346</created>
@@ -193,7 +202,67 @@
       <option name="presentableId" value="LOCAL−00009" />
       <updated>1645478033400</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL−00010" summary="Rewrite typescriptillä alut">
+      <created>1646174912355</created>
+      <option name="number" value="LOCAL−00010" />
+      <option name="presentableId" value="LOCAL−00010" />
+      <updated>1646174912355</updated>
+    </task>
+    <task id="LOCAL−00011" summary="Uusi haku hienot animaatiot ja täydellinen cache">
+      <created>1646185763625</created>
+      <option name="number" value="LOCAL−00011" />
+      <option name="presentableId" value="LOCAL−00011" />
+      <updated>1646185763625</updated>
+    </task>
+    <task id="LOCAL−00012" summary="Systeemi joka tallentaa lempparit">
+      <created>1646188832372</created>
+      <option name="number" value="LOCAL−00012" />
+      <option name="presentableId" value="LOCAL−00012" />
+      <updated>1646188832372</updated>
+    </task>
+    <task id="LOCAL−00013" summary="Lockr typet">
+      <created>1646188891570</created>
+      <option name="number" value="LOCAL−00013" />
+      <option name="presentableId" value="LOCAL−00013" />
+      <updated>1646188891570</updated>
+    </task>
+    <task id="LOCAL−00014" summary="Virheellinen type roskiin">
+      <created>1646188934919</created>
+      <option name="number" value="LOCAL−00014" />
+      <option name="presentableId" value="LOCAL−00014" />
+      <updated>1646188934919</updated>
+    </task>
+    <task id="LOCAL−00015" summary="Eslint iloiseksi näillä jekuilla">
+      <created>1646189089392</created>
+      <option name="number" value="LOCAL−00015" />
+      <option name="presentableId" value="LOCAL−00015" />
+      <updated>1646189089392</updated>
+    </task>
+    <task id="LOCAL−00016" summary="Lempparit kaksi kertaa listassa bugi pois">
+      <created>1646217969235</created>
+      <option name="number" value="LOCAL−00016" />
+      <option name="presentableId" value="LOCAL−00016" />
+      <updated>1646217969235</updated>
+    </task>
+    <task id="LOCAL−00017" summary="Parempi asetukset valikko ja tutoriaali">
+      <created>1646225001654</created>
+      <option name="number" value="LOCAL−00017" />
+      <option name="presentableId" value="LOCAL−00017" />
+      <updated>1646225001654</updated>
+    </task>
+    <task id="LOCAL−00018" summary="Firefoxille oma lisäosaversio">
+      <created>1646229048998</created>
+      <option name="number" value="LOCAL−00018" />
+      <option name="presentableId" value="LOCAL−00018" />
+      <updated>1646229048998</updated>
+    </task>
+    <task id="LOCAL−00019" summary="Template manifest firefoxille">
+      <created>1646229233092</created>
+      <option name="number" value="LOCAL−00019" />
+      <option name="presentableId" value="LOCAL−00019" />
+      <updated>1646229233092</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -206,7 +275,15 @@
         <option value="Default.Author" />
         <option value="Default.Date" />
         <option value="Default.Subject" />
+        <option value="Git.CommitSignature" />
+        <option value="Default.Hash" />
       </list>
+    </option>
+    <option name="COLUMN_ID_VISIBILITY">
+      <map>
+        <entry key="Table.Default.Hash.ColumnIdVisibility" value="true" />
+        <entry key="Table.Git.CommitSignature.ColumnIdVisibility" value="true" />
+      </map>
     </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -230,7 +307,17 @@
     <MESSAGE value="Fokus sanasto ja sentry error tracking" />
     <MESSAGE value="Versio 4.1.4 =&gt; 4.2.0" />
     <MESSAGE value="Worker: viikon pitkä cache sanomapro sanoille" />
-    <option name="LAST_COMMIT_MESSAGE" value="Worker: viikon pitkä cache sanomapro sanoille" />
+    <MESSAGE value="Rewrite typescriptillä alut" />
+    <MESSAGE value="Uusi haku hienot animaatiot ja täydellinen cache" />
+    <MESSAGE value="Systeemi joka tallentaa lempparit" />
+    <MESSAGE value="Lockr typet" />
+    <MESSAGE value="Virheellinen type roskiin" />
+    <MESSAGE value="Eslint iloiseksi näillä jekuilla" />
+    <MESSAGE value="Lempparit kaksi kertaa listassa bugi pois" />
+    <MESSAGE value="Parempi asetukset valikko ja tutoriaali" />
+    <MESSAGE value="Firefoxille oma lisäosaversio" />
+    <MESSAGE value="Template manifest firefoxille" />
+    <option name="LAST_COMMIT_MESSAGE" value="Template manifest firefoxille" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -1,40 +1,53 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 
-// import './Popup.css';
 import * as Sentry from '@sentry/react';
 import styled from 'styled-components'
-
 import {
-  HashRouter, Route, Routes, useLocation,
+  HashRouter, Route, Routes, useNavigate,
 } from 'react-router-dom';
-import { AnimatePresence } from 'framer-motion';
-import MainPage from './pages';
-import Dictionary from './pages/Dictionary';
+import Lockr from 'lockr'
 
-const Container = styled.div`
+import MainPage from './pages/Main';
+import Dictionary from './pages/Dictionary';
+import Settings from './pages/Settings';
+import Container from './pages/Container';
+import ErrorBoundary from './ErrorBoundary';
+import Tutorial from './pages/Tutorial';
+
+const Wrapper = styled.div`
   padding: 10px;
 `
 
 function AnimatedRouter() {
-  const location = useLocation()
+  const navigate = useNavigate()
+  useEffect(() => {
+    const uusi = Lockr.get('uusiUkko', true)
+    if (uusi) {
+      navigate('/tutoriaali')
+    }
+  }, []);
 
   return (
-    <AnimatePresence>
-      <Routes key={location.hash} location={location}>
-        <Route path="/" element={<MainPage />} />
-        <Route path="/sanasto/:id" element={<Dictionary />} />
+    <ErrorBoundary>
+      <Routes>
+        <Route path="/tutoriaali" element={<Tutorial />} />
+        <Route path="/" element={<Container />}>
+          <Route index element={<MainPage />} />
+          <Route path="asetukset" element={<Settings />} />
+          <Route path="sanasto/:id" element={<Dictionary />} />
+        </Route>
       </Routes>
-    </AnimatePresence>
+    </ErrorBoundary>
   )
 }
 
 function Popup() {
   return (
-    <Container>
+    <Wrapper>
       <HashRouter>
         <AnimatedRouter />
       </HashRouter>
-    </Container>
+    </Wrapper>
   );
 }
 
