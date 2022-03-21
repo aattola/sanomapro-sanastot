@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ecaf6a0b-a02f-4b4c-b483-9e278dbd70ce" name="Changes" comment="Template manifest firefoxille">
+      <change afterPath="$PROJECT_DIR$/.idea/scopes/worker.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/workers/sanastot/src/on_track.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/workers/sanastot/src/sanastoHandler.ts" beforeDir="false" afterPath="$PROJECT_DIR$/workers/sanastot/src/sanastoHandler.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/workers/sanastot/src/sanastotHandler.ts" beforeDir="false" afterPath="$PROJECT_DIR$/workers/sanastot/src/sanastotHandler.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,7 +38,7 @@
     </file-type-list>
   </component>
   <component name="GitToolBoxStore">
-    <option name="projectConfigVersion" value="4" />
+    <option name="projectConfigVersion" value="5" />
     <option name="recentBranches">
       <RecentBranches>
         <option name="branchesForRepo">
@@ -66,6 +69,11 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="NamedScopeManager">
+    <order>
+      <scope name="worker" />
+    </order>
+  </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -78,6 +86,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -86,8 +95,8 @@
     <property name="node.js.selected.package.standard" value="" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="Errors" />
-    <property name="ts.external.directory.path" value="C:\Users\andre\Desktop\Koodia\Sanastot\node_modules\typescript\lib" />
+    <property name="settings.editor.selected.configurable" value="project.scopes" />
+    <property name="ts.external.directory.path" value="C:\Users\andre\Desktop\Koodia\sanomapro-sanastot\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -147,6 +156,9 @@
       <workItem from="1646160928653" duration="892000" />
       <workItem from="1646161848206" duration="26664000" />
       <workItem from="1646217430355" duration="11305000" />
+      <workItem from="1647862964128" duration="99000" />
+      <workItem from="1647863106508" duration="988000" />
+      <workItem from="1647864354508" duration="715000" />
     </task>
     <task id="LOCAL−00001" summary="Cloudflare worker sanoille ja alku fokus sanoille">
       <created>1645385396346</created>
