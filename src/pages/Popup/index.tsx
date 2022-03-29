@@ -6,6 +6,7 @@ import { BrowserTracing } from '@sentry/tracing';
 // eslint-disable-next-line import/no-unresolved
 import {} from 'styled-components/cssprop'
 import { MantineProvider } from '@mantine/core';
+import { observer } from 'mobx-react';
 
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { createWebStoragePersistor } from 'react-query/createWebStoragePersistor-experimental';
@@ -16,6 +17,7 @@ import { ReactQueryDevtools } from 'react-query/devtools'
 // @ts-ignore
 import Popup from './Popup';
 import './index.css';
+import extensionStore from './Stores/ExtensionStore';
 
 Sentry.init({
   dsn: 'https://e75aeeaccd9140b2bc60069e2d9a8aa3@o124657.ingest.sentry.io/6222133',
@@ -43,12 +45,20 @@ persistQueryClient({
   persistor: localStoragePersistor,
 })
 
+function IndexMain() {
+  return (
+    <MantineProvider withGlobalStyles theme={{ colorScheme: extensionStore.theme }}>
+      <Popup />
+    </MantineProvider>
+  )
+}
+
+const IndexMainObserved = observer(IndexMain)
+
 render(
   (
     <QueryClientProvider client={queryClient}>
-      <MantineProvider theme={{ colorScheme: 'light' }}>
-        <Popup />
-      </MantineProvider>
+      <IndexMainObserved />
 
       <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>

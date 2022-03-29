@@ -5,7 +5,7 @@ import { Skeleton } from '@mantine/core';
 import { MaterialCard, MaterialGrid } from '../styles/Materials';
 import { useMaterials } from '../hooks/useMaterials';
 import useSearch from '../hooks/useSearch';
-import searchStore from '../Stores/SearchStore';
+import searchStore from '../Stores/ExtensionStore';
 import { Material } from '../types/Materials';
 
 interface Props {

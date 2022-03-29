@@ -7,11 +7,13 @@ import {
 } from '@mantine/core';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 import { Release } from '../types/Settings';
+import extensionStore from '../Stores/ExtensionStore';
 
 const Container = styled.div`
   padding: 10px; 
   padding-top: 0px;
-  max-width: 260px;
+  max-width: 290px;
+  margin: 0 auto;
 `;
 
 function fetcher() {
@@ -21,7 +23,7 @@ function fetcher() {
 function SettingsView() {
   const queryClient = useQueryClient()
   const {
-    data, error, isLoading, isError,
+    data, isLoading, isError,
   } = useQuery<Release[]>('päivitykset', fetcher, {
     cacheTime: 1,
   })
@@ -35,11 +37,6 @@ function SettingsView() {
 
   function restart() {
     setInfo('Käynnistellään')
-    chrome.runtime.reload()
-  }
-
-  function material() {
-    localStorage.setItem('materialmode', String(true))
     chrome.runtime.reload()
   }
 
@@ -72,6 +69,7 @@ function SettingsView() {
           <Group style={{ marginTop: 5, gap: 10 }}>
             <Button onClick={flushCache} variant="outline">Poista cache</Button>
             <Button onClick={restart} variant="outline">Käynnistä uudelleen</Button>
+            <Button onClick={extensionStore.toggleTheme} variant="outline">Vaihda teema</Button>
           </Group>
         </Card>
         {/* <Button onClick={material} variant="outlined" style={{ marginTop: 5 }}>Material💅🏾💅🏾💅🏾✨🤩 mode</Button> */}

@@ -5,12 +5,16 @@ import { motion } from 'framer-motion';
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
 import { observer } from 'mobx-react';
+
 import Refresh from '@mui/icons-material/Refresh';
 import SettingsIcon from '@mui/icons-material/Settings';
+import OpenInNewIcon from '@mui/icons-material/OpenInNew';
+import LightModeTwoToneIcon from '@mui/icons-material/LightModeTwoTone';
+import LightModeIcon from '@mui/icons-material/LightMode';
 
 import { useQueryClient } from 'react-query';
 import Materials from '../components/Materials';
-import searchStore from '../Stores/SearchStore';
+import extensionStore from '../Stores/ExtensionStore';
 import { useFavorites } from '../hooks/useFavorites';
 import { Favorites } from '../components/Favorites';
 
@@ -38,7 +42,7 @@ function MainPage() {
 
   function popup() {
     chrome.windows.create({
-      url: chrome.runtime.getURL('popup.html?popup=true'), type: 'popup', width: 320, height: 625,
+      url: chrome.runtime.getURL('popup.html?popup=true'), type: 'popup', width: 335, height: 625,
     })
     window.close()
   }
@@ -62,6 +66,18 @@ function MainPage() {
       <Container>
         <Teksti onClick={() => navigate('/asetukset')} style={{ width: 'min-content' }}>Kirjat:</Teksti>
         <div style={{ display: 'flex', gap: 2 }}>
+          <ActionIcon onClick={extensionStore.toggleTheme} size="sm" radius="xl">
+            {extensionStore.theme === 'light' ? (
+              <LightModeTwoToneIcon fontSize="small" />
+            ) : (
+              <LightModeIcon fontSize="small" />
+            )}
+          </ActionIcon>
+          {!inPopup && (
+            <ActionIcon onClick={popup} size="sm" radius="xl">
+              <OpenInNewIcon fontSize="small" />
+            </ActionIcon>
+          )}
           <ActionIcon onClick={() => navigate('/asetukset')} size="sm" radius="xl">
             <SettingsIcon fontSize="small" />
           </ActionIcon>
@@ -71,13 +87,8 @@ function MainPage() {
         </div>
       </Container>
 
-      <Materials search={searchStore.search} addFavorite={addFavorite} />
+      <Materials search={extensionStore.search} addFavorite={addFavorite} />
 
-      {!inPopup && (
-        <div>
-          <Button variant="outline" onClick={popup}>Avaa uudessa ikkunassa</Button>
-        </div>
-      )}
     </motion.div>
   );
 }

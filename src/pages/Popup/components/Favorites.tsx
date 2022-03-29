@@ -3,7 +3,7 @@ import { Accordion, useAccordionState } from '@mantine/core';
 import { Link } from 'react-router-dom';
 import { MaterialCard, MaterialGrid } from '../styles/Materials';
 import { Material } from '../types/Materials';
-import searchStore from '../Stores/SearchStore';
+import searchStore from '../Stores/ExtensionStore';
 
 export function Favorites({
   materials, fav, addFavorite,

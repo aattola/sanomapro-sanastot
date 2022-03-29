@@ -7,7 +7,7 @@ import { ActionIcon, TextInput } from '@mantine/core';
 import styled from 'styled-components';
 import ArrowBack from '@mui/icons-material/ArrowBack';
 import { observer } from 'mobx-react';
-import searchStore from '../Stores/SearchStore';
+import extensionStore from '../Stores/ExtensionStore';
 
 const Cont = styled.div`
   display: flex;
@@ -35,7 +35,7 @@ const Container = () => {
     if (!match) {
       setChecked(true)
     } else {
-      searchStore.setSearch('')
+      extensionStore.setSearch('')
       setChecked(false)
     }
   }, [match]);
@@ -45,6 +45,7 @@ const Container = () => {
       <Cont>
         <motion.div
           onClick={() => navigate(-1)}
+          initial={{ opacity: 0, width: 0 }}
           animate={checked ? 'open' : 'closed'}
           style={{
             height: 'fit-content',
@@ -61,9 +62,9 @@ const Container = () => {
           variant="filled"
           size="md"
           required
-          value={searchStore.search}
+          value={extensionStore.search}
           onChange={(event) => {
-            searchStore.setSearch(event.target.value)
+            extensionStore.setSearch(event.target.value)
           }}
           id="containerTextfield"
           style={{ width: '100%' }}

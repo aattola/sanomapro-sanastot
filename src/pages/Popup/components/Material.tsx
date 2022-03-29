@@ -4,7 +4,7 @@ import { observer } from 'mobx-react';
 import { useDebouncedValue } from '@mantine/hooks';
 import useSearch from '../hooks/useSearch';
 import { Dictionary } from '../types/Dictionary';
-import searchStore from '../Stores/SearchStore';
+import searchStore from '../Stores/ExtensionStore';
 import { Result, Paragraph } from '../styles/Material';
 
 interface Props {
