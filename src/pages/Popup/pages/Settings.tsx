@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion'
 import { useQuery, useQueryClient } from 'react-query';
+import { observer } from 'mobx-react';
+
 import {
   Text, Timeline, Button, Card, Group, Badge, Alert,
 } from '@mantine/core';
@@ -70,6 +72,12 @@ function SettingsView() {
             <Button onClick={flushCache} variant="outline">Poista cache</Button>
             <Button onClick={restart} variant="outline">Käynnistä uudelleen</Button>
             <Button onClick={extensionStore.toggleTheme} variant="outline">Vaihda teema</Button>
+            {extensionStore.listaMode ? (
+              <Button onClick={extensionStore.toggleMode} variant="gradient" gradient={{ from: '#ed6ea0', to: '#ec8c69', deg: 35 }}>Jussin listamode</Button>
+            ) : (
+              <Button onClick={extensionStore.toggleMode} variant="outline">Jussin Listamode</Button>
+
+            )}
           </Group>
         </Card>
         {/* <Button onClick={material} variant="outlined" style={{ marginTop: 5 }}>Material💅🏾💅🏾💅🏾✨🤩 mode</Button> */}
@@ -92,4 +100,4 @@ function SettingsView() {
   );
 }
 
-export default SettingsView;
+export default observer(SettingsView);

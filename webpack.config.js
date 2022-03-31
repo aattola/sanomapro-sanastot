@@ -11,7 +11,7 @@ const package = require('./package.json')
 const ASSET_PATH = process.env.ASSET_PATH || '/';
 
 const alias = {
-  'react-dom': '@hot-loader/react-dom',
+  'react-dom': 'react-dom',
 };
 
 // load the secrets

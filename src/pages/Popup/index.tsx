@@ -1,6 +1,6 @@
 /* eslint-disable import/no-import-module-exports */
 import React from 'react';
-import { render } from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import * as Sentry from '@sentry/react';
 import { BrowserTracing } from '@sentry/tracing';
 // eslint-disable-next-line import/no-unresolved
@@ -55,16 +55,16 @@ function IndexMain() {
 
 const IndexMainObserved = observer(IndexMain)
 
-render(
-  (
-    <QueryClientProvider client={queryClient}>
-      <IndexMainObserved />
+const container = window.document.querySelector('#app-container')
+const root = createRoot((container as Element))
+root.render(
+  <QueryClientProvider client={queryClient}>
+    <IndexMainObserved />
 
-      <ReactQueryDevtools initialIsOpen={false} />
-    </QueryClientProvider>
-  ), window.document.querySelector('#app-container'),
-);
+    <ReactQueryDevtools initialIsOpen={false} />
+  </QueryClientProvider>,
+)
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
-if (module.hot) module.hot.accept();
+// if (module.hot) module.hot.accept();

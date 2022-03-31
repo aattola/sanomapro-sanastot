@@ -10,7 +10,7 @@ const on_track = {
   "language": "en",
   "bundleId": "custom_on_track",
   "bundleTitle": "On Track",
-  "materialTitle": "On Track",
+  "materialTitle": "On Track 1-8",
   "materialId": "custom_on_track",
   "productId": "JEFF-2",
   "updatedAt": "2022-02-22T08:15:54.421Z",

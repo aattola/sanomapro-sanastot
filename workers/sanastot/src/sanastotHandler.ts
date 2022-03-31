@@ -18,7 +18,7 @@ const sanastotHandler: RouteHandler<Request> = async (req) => {
       "language": "sv",
       "bundleId": "fokus",
       "bundleTitle": "Fokus",
-      "materialTitle": "Fokus",
+      "materialTitle": "Fokus 1-7",
       "materialId": "custom_ruotsi",
       "productId": "JEFF-1",
       "updatedAt": "2022-02-22T08:15:54.421Z",
