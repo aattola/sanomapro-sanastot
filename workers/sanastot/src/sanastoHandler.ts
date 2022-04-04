@@ -9,7 +9,7 @@ const on_track = {
   "primaryColor": "#cc6699",
   "language": "en",
   "bundleId": "custom_on_track",
-  "bundleTitle": "On Track",
+  "bundleTitle": "On Track 1-8",
   "materialTitle": "On Track 1-8",
   "materialId": "custom_on_track",
   "productId": "JEFF-2",

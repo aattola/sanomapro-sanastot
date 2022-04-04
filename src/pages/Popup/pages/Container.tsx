@@ -2,10 +2,13 @@ import React, { useEffect, useState } from 'react';
 import {
   Outlet, useLocation, useMatch, useNavigate,
 } from 'react-router-dom';
-import { AnimatePresence, motion } from 'framer-motion';
-import { ActionIcon, TextInput } from '@mantine/core';
+import { motion } from 'framer-motion';
+import {
+  ActionIcon, Text, TextInput,
+} from '@mantine/core';
 import styled from 'styled-components';
 import ArrowBack from '@mui/icons-material/ArrowBack';
+import SearchIcon from '@mui/icons-material/Search';
 import { observer } from 'mobx-react';
 import extensionStore from '../Stores/ExtensionStore';
 
@@ -21,6 +24,13 @@ const Cont = styled.div`
 const variants = {
   open: {
     opacity: 1, width: 'auto', marginRight: 10,
+  },
+  closed: { opacity: 0, width: 0 },
+}
+
+const variants2 = {
+  open: {
+    opacity: 1, width: 'auto', marginLeft: 10,
   },
   closed: { opacity: 0, width: 0 },
 }
@@ -56,24 +66,31 @@ const Container = () => {
             <ArrowBack />
           </ActionIcon>
         </motion.div>
-        <TextInput
-          autoFocus
-          placeholder="Hae tästä"
-          variant="filled"
-          size="md"
-          required
-          value={extensionStore.search}
-          onChange={(event) => {
-            extensionStore.setSearch(event.target.value)
-          }}
-          id="containerTextfield"
-          style={{ width: '100%' }}
-        />
+        {location.pathname === '/asetukset' ? (
+          <motion.div style={{ zIndex: 3 }} layoutId="kirjat">
+            <Text style={{ zIndex: 3 }} p={0} weight={500}>Asetukset</Text>
+          </motion.div>
+        ) : (
+          <TextInput
+            autoComplete="off"
+            autoFocus
+            placeholder="Hae tästä"
+            variant="filled"
+            size="md"
+            required
+            value={extensionStore.search}
+            onChange={(event) => {
+              extensionStore.setSearch(event.target.value)
+            }}
+            id="containerTextfield"
+            style={{ width: '100%' }}
+          />
+        )}
       </Cont>
 
-      <AnimatePresence exitBeforeEnter>
-        <Outlet key={location.pathname} />
-      </AnimatePresence>
+      {/* <AnimatePresence exitBeforeEnter> */}
+      <Outlet key={location.pathname} />
+      {/* </AnimatePresence> */}
     </>
   );
 };

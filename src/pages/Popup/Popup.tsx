@@ -7,6 +7,7 @@ import {
 } from 'react-router-dom';
 import Lockr from 'lockr'
 
+import { AnimatePresence } from 'framer-motion';
 import MainPage from './pages/Main';
 import Dictionary from './pages/Dictionary';
 import Settings from './pages/Settings';
@@ -29,14 +30,16 @@ function AnimatedRouter() {
 
   return (
     <ErrorBoundary>
-      <Routes>
-        <Route path="/tutoriaali" element={<Tutorial />} />
-        <Route path="/" element={<Container />}>
-          <Route index element={<MainPage />} />
-          <Route path="asetukset" element={<Settings />} />
-          <Route path="sanasto/:id" element={<Dictionary />} />
-        </Route>
-      </Routes>
+      <AnimatePresence>
+        <Routes>
+          <Route path="/tutoriaali" element={<Tutorial />} />
+          <Route path="/" element={<Container />}>
+            <Route index element={<MainPage />} />
+            <Route path="asetukset" element={<Settings />} />
+            <Route path="sanasto/:id" element={<Dictionary />} />
+          </Route>
+        </Routes>
+      </AnimatePresence>
     </ErrorBoundary>
   )
 }

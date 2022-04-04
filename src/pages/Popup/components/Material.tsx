@@ -1,24 +1,39 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { observer } from 'mobx-react';
+import * as Comlink from 'comlink';
 
-import { useDebouncedValue } from '@mantine/hooks';
-import useSearch from '../hooks/useSearch';
+import Fuse from 'fuse.js';
 import { Dictionary } from '../types/Dictionary';
-import searchStore from '../Stores/ExtensionStore';
 import { Result, Paragraph } from '../styles/Material';
+import extensionStore from '../Stores/ExtensionStore';
 
 interface Props {
   dictionary: Dictionary
 }
 
-const Material = ({ dictionary }: Props) => {
-  const [debounced] = useDebouncedValue(searchStore.search, 300, { leading: true });
+const wr = new Worker('worker.js');
+const worker = Comlink.wrap<any>(wr);
 
-  const results = useSearch<{origin: string, translation: string, id: string}>(dictionary.translations, debounced, {
-    keys: ['origin', 'translation'],
-    useExtendedSearch: true,
-    limit: 30,
-  })
+const Material = ({ dictionary }: Props) => {
+  const [term, setTerm] = useState('');
+  const [results, setResults] = useState< Fuse.FuseResult<{origin: string, translation: string, id: string}>[]>([])
+
+  async function search() {
+    if (extensionStore.search === term) return
+    if (extensionStore.search === '') {
+      setResults([])
+      return setTerm('')
+    }
+
+    await worker.search(dictionary.translations, extensionStore.search)
+    const wResults = await worker.results
+
+    if (wResults === results) return
+    setResults(wResults)
+    setTerm(extensionStore.search)
+  }
+
+  search()
 
   const translations = results.map((result) => (
     <Result key={result.item.id}>
@@ -30,10 +45,10 @@ const Material = ({ dictionary }: Props) => {
   return (
     <div>
       <div style={{ textAlign: 'center', marginTop: 10, fontSize: 14 }}>
-        {searchStore.search === '' && (
+        {term === '' && (
           <p>Hae sanoja tuosta ylhäältä</p>
         )}
-        {!translations[0] && searchStore.search !== '' && (
+        {!translations[0] && extensionStore.search !== '' && (
           <p>Ei löytynyt mitään.</p>
         )}
       </div>

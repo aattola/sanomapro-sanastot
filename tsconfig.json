@@ -2,6 +2,7 @@
   "compilerOptions": {
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
+    "types": ["react/experimental", "@types/chrome"],
     "allowJs": false,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -16,5 +17,5 @@
     "jsx": "react"
   },
   "include": ["src"],
-  "exclude": ["build", "node_modules"]
+  "exclude": ["build", "node_modules"],
 }

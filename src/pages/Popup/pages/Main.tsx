@@ -1,5 +1,5 @@
 import React from 'react';
-import { ActionIcon, Button } from '@mantine/core';
+import { ActionIcon } from '@mantine/core';
 import { motion } from 'framer-motion';
 
 import styled from 'styled-components';
@@ -25,7 +25,7 @@ const Container = styled.div`
 `
 
 const Teksti = styled.div`
-  font-size: 14px;
+  font-size: 16px;
   margin: 0;
 `
 
@@ -48,13 +48,14 @@ function MainPage() {
   }
 
   return (
-    <motion.div
-      initial={{ x: 100, opacity: 0 }}
-      animate={{ x: 0, opacity: 1 }}
-      exit={{ x: -100, opacity: 0 }}
-      transition={{ duration: 0.2 }}
-      key="main"
-    >
+    // <motion.div
+    //   initial={{ x: 100, opacity: 0 }}
+    //   animate={{ x: 0, opacity: 1 }}
+    //   exit={{ x: -100, opacity: 0 }}
+    //   transition={{ duration: 0.2 }}
+    //   key="main"
+    // >
+    <>
       {fav[0] && (
         <Favorites
           fav={fav}
@@ -64,7 +65,9 @@ function MainPage() {
       )}
 
       <Container>
-        <Teksti onClick={() => navigate('/asetukset')} style={{ width: 'min-content' }}>Kirjat:</Teksti>
+        <motion.div onClick={() => navigate('/asetukset')} style={{ width: 'min-content', zIndex: 3 }} layoutId="kirjat">
+          <Teksti style={{ zIndex: 3 }}>Kirjat:</Teksti>
+        </motion.div>
         <div style={{ display: 'flex', gap: 2 }}>
           <ActionIcon onClick={extensionStore.toggleTheme} size="sm" radius="xl">
             {extensionStore.theme === 'light' ? (
@@ -88,8 +91,9 @@ function MainPage() {
       </Container>
 
       <Materials search={extensionStore.search} addFavorite={addFavorite} />
+    </>
 
-    </motion.div>
+  // </motion.div>
   );
 }
 
