@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { useQuery, useQueryClient } from 'react-query';
+import { useQuery, useQueryClient } from '@tanstack/react-query';
 import { observer } from 'mobx-react';
 // eslint-disable-next-line import/no-duplicates
 import { fi } from 'date-fns/locale';
@@ -30,7 +30,7 @@ function SettingsView() {
   const queryClient = useQueryClient()
   const {
     data, isLoading, isError,
-  } = useQuery<Release[]>('päivitykset', fetcher, {
+  } = useQuery<Release[]>(['päivitykset'], fetcher, {
     cacheTime: 1,
   })
   const [info, setInfo] = useState('');

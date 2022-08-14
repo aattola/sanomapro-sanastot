@@ -1,12 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="ecaf6a0b-a02f-4b4c-b483-9e278dbd70ce" name="Changes" comment="Template manifest firefoxille">
-      <change afterPath="$PROJECT_DIR$/.idea/scopes/worker.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/workers/sanastot/src/on_track.json" afterDir="false" />
+    <list default="true" id="4a8188f9-0326-4542-b3c9-0b488d0b7c28" name="Changes" comment="Web workkereillä uusi hakusysteemi. Haku toimii nyt jopa onnin koneella.">
+      <change beforePath="$PROJECT_DIR$/.idea/discord.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/discord.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/git_toolbox_prj.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/git_toolbox_prj.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sanomapro-sanastot.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sanomapro-sanastot.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workers/sanastot/src/sanastoHandler.ts" beforeDir="false" afterPath="$PROJECT_DIR$/workers/sanastot/src/sanastoHandler.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workers/sanastot/src/sanastotHandler.ts" beforeDir="false" afterPath="$PROJECT_DIR$/workers/sanastot/src/sanastotHandler.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/firefox/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/firefox/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/manifest_firefox.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/manifest_firefox.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/damn.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/icon-128.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/icon-34.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/iconi-1282.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/iconi-342.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/kääntäjä.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Popup/MaterialViewer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Popup/MaterialViewer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Popup/components/Favorites.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Popup/components/Favorites.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Popup/hooks/useMaterial.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Popup/hooks/useMaterial.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Popup/hooks/useMaterials.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Popup/hooks/useMaterials.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Popup/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Popup/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Popup/pages/Main.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Popup/pages/Main.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Popup/pages/Settings.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Popup/pages/Settings.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/webserver.js" beforeDir="false" afterPath="$PROJECT_DIR$/utils/webserver.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +40,7 @@
       <list>
         <option value="TypeScript File" />
         <option value="TypeScript JSX File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -69,38 +92,37 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="NamedScopeManager">
-    <order>
-      <scope name="worker" />
-    </order>
-  </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="1x0BtWcZ8bFdnv5DejFBKBSh9qg" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="compactDirectories" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.detected.package.standard" value="true" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="node.js.selected.package.standard" value="" />
-    <property name="nodejs_package_manager_path" value="yarn" />
-    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="project.scopes" />
-    <property name="ts.external.directory.path" value="C:\Users\andre\Desktop\Koodia\sanomapro-sanastot\node_modules\typescript\lib" />
-    <property name="vue.rearranger.settings.migration" value="true" />
-  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Project.color&quot;: &quot;31020f&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/andre/Desktop/Koodia/Sanastot&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\andre\\Desktop\\Koodia\\Sanastot\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\andre\Desktop\Koodia\Sanastot\src\assets\img" />
+      <recent name="C:\Users\andre\Desktop\Koodia\Sanastot\src\assets" />
       <recent name="C:\Users\andre\Desktop\Koodia\Sanastot\src\pages\Popup\components" />
       <recent name="C:\Users\andre\Desktop\Koodia\Sanastot\src\pages\Popup\types" />
       <recent name="C:\Users\andre\Desktop\Koodia\Sanastot\src\pages\Popup" />
@@ -120,7 +142,10 @@
         <script value="build" />
       </scripts>
       <node-interpreter value="project" />
-      <envs />
+      <package-manager value="C:\Program Files (x86)\Yarn" />
+      <envs>
+        <env name="NODE_ENV" value="production" />
+      </envs>
       <method v="2" />
     </configuration>
     <configuration name="start" type="js.build_tools.npm" nameIsGenerated="true">
@@ -134,11 +159,15 @@
       <envs />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="npm.build" />
+      <item itemvalue="npm.start" />
+    </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="ecaf6a0b-a02f-4b4c-b483-9e278dbd70ce" name="Changes" comment="" />
+      <changelist id="4a8188f9-0326-4542-b3c9-0b488d0b7c28" name="Changes" comment="Gitignore webstorm config" />
       <created>1629482340620</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -156,9 +185,19 @@
       <workItem from="1646160928653" duration="892000" />
       <workItem from="1646161848206" duration="26664000" />
       <workItem from="1646217430355" duration="11305000" />
-      <workItem from="1647862964128" duration="99000" />
-      <workItem from="1647863106508" duration="988000" />
-      <workItem from="1647864354508" duration="715000" />
+      <workItem from="1648580591603" duration="278000" />
+      <workItem from="1648580894100" duration="2263000" />
+      <workItem from="1648749829954" duration="4639000" />
+      <workItem from="1649065335883" duration="7998000" />
+      <workItem from="1649087842002" duration="9911000" />
+      <workItem from="1649276596286" duration="1015000" />
+      <workItem from="1649335112349" duration="3224000" />
+      <workItem from="1649704224695" duration="309000" />
+      <workItem from="1649767999975" duration="56000" />
+      <workItem from="1649768072188" duration="71000" />
+      <workItem from="1649768160645" duration="357000" />
+      <workItem from="1660477493088" duration="5073000" />
+      <workItem from="1660482599790" duration="1921000" />
     </task>
     <task id="LOCAL−00001" summary="Cloudflare worker sanoille ja alku fokus sanoille">
       <created>1645385396346</created>
@@ -274,7 +313,25 @@
       <option name="presentableId" value="LOCAL−00019" />
       <updated>1646229233092</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL−00020" summary="Dark theme ja uusia nappuloita">
+      <created>1648583115215</created>
+      <option name="number" value="LOCAL−00020" />
+      <option name="presentableId" value="LOCAL−00020" />
+      <updated>1648583115215</updated>
+    </task>
+    <task id="LOCAL−00021" summary="Listamode kaikille maailman ihmisille">
+      <created>1648754453817</created>
+      <option name="number" value="LOCAL−00021" />
+      <option name="presentableId" value="LOCAL−00021" />
+      <updated>1648754453817</updated>
+    </task>
+    <task id="LOCAL−00022" summary="Web workkereillä uusi hakusysteemi. Haku toimii nyt jopa onnin koneella.">
+      <created>1649099565161</created>
+      <option name="number" value="LOCAL−00022" />
+      <option name="presentableId" value="LOCAL−00022" />
+      <updated>1649099565161</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -310,6 +367,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Cloudflare worker sanoille ja alku fokus sanoille" />
     <MESSAGE value="Osoitteet uuteen serverless funktioon" />
     <MESSAGE value="Turhia console.logeja pois ja leveyttä popupille lisää" />
@@ -329,7 +387,10 @@
     <MESSAGE value="Parempi asetukset valikko ja tutoriaali" />
     <MESSAGE value="Firefoxille oma lisäosaversio" />
     <MESSAGE value="Template manifest firefoxille" />
-    <option name="LAST_COMMIT_MESSAGE" value="Template manifest firefoxille" />
+    <MESSAGE value="Dark theme ja uusia nappuloita" />
+    <MESSAGE value="Listamode kaikille maailman ihmisille" />
+    <MESSAGE value="Web workkereillä uusi hakusysteemi. Haku toimii nyt jopa onnin koneella." />
+    <option name="LAST_COMMIT_MESSAGE" value="Web workkereillä uusi hakusysteemi. Haku toimii nyt jopa onnin koneella." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

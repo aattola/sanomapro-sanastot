@@ -8,10 +8,10 @@ import {} from 'styled-components/cssprop'
 import { MantineProvider } from '@mantine/core';
 import { observer } from 'mobx-react';
 
-import { QueryClient, QueryClientProvider } from 'react-query';
-import { createWebStoragePersistor } from 'react-query/createWebStoragePersistor-experimental';
-import { persistQueryClient } from 'react-query/persistQueryClient-experimental'
-import { ReactQueryDevtools } from 'react-query/devtools'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { persistQueryClient } from '@tanstack/react-query-persist-client'
+import { createSyncStoragePersister } from '@tanstack/query-sync-storage-persister'
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
@@ -38,11 +38,20 @@ const queryClient = new QueryClient({
   },
 })
 
-const localStoragePersistor = createWebStoragePersistor({ storage: window.localStorage })
+const localStoragePersistor = createSyncStoragePersister({ storage: window.localStorage })
+
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+const buster = (version as string)
+
+if (!buster) {
+  throw new Error('VERSIO ENV on rikki')
+}
 
 persistQueryClient({
   queryClient,
-  persistor: localStoragePersistor,
+  persister: localStoragePersistor,
+  buster,
 })
 
 function IndexMain() {

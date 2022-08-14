@@ -1,5 +1,5 @@
 import React from 'react';
-import { QueryFunction, useQuery } from 'react-query';
+import { QueryFunction, useQuery } from '@tanstack/react-query';
 import { QueryFunctionContext } from 'react-query/types/core/types';
 
 import { v4 } from 'uuid';

@@ -1,5 +1,5 @@
 import React from 'react';
-import { useQuery } from 'react-query';
+import { useQuery } from '@tanstack/react-query';
 import { Material } from '../types/Materials';
 
 function materialsQuery(): Promise<Material[]> {
@@ -7,7 +7,7 @@ function materialsQuery(): Promise<Material[]> {
 }
 
 export function useMaterials(): Material[] | [] {
-  const { isError, isLoading, data } = useQuery<Material[]>('materiaalit', materialsQuery);
+  const { isError, isLoading, data } = useQuery<Material[]>(['materiaalit'], materialsQuery);
 
   if (isError || !data) return [];
   if (isLoading) return []

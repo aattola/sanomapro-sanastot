@@ -1,6 +1,5 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import useSWR from 'swr'
-import Sifter from 'sifter'
 import styled from 'styled-components'
 import Lockr from 'lockr'
 

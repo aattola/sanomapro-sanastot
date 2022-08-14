@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import { Accordion, useAccordionState } from '@mantine/core';
+import React, { useEffect, useState } from 'react';
+import { Accordion } from '@mantine/core';
 import { Link } from 'react-router-dom';
 import { MaterialCard, MaterialGrid } from '../styles/Materials';
 import { Material } from '../types/Materials';
@@ -8,19 +8,17 @@ import searchStore from '../Stores/ExtensionStore';
 export function Favorites({
   materials, fav, addFavorite,
 }: { materials: Material[], fav: Material[] | [], addFavorite: (e: React.MouseEvent, material: Material) => void }) {
-  const [state, handlers] = useAccordionState({ total: 1, initialItem: 0 });
+  const [value, setValue] = useState<string | null>(null);
 
   useEffect(() => {
-    if (fav[0]) return handlers.setState({ 0: true });
-    return handlers.setState({ 0: false });
+    if (fav[0]) return setValue('Lempparit');
+    return setValue(null);
   }, [fav]);
 
   return (
     <Accordion
-      state={state}
-      onChange={handlers.setState}
-      iconPosition="right"
-      iconSize={14}
+      value={value}
+      onChange={setValue}
       sx={{
         button: {
           padding: 4, fontFamily: 'Poppins', fontSize: 14,
@@ -34,7 +32,7 @@ export function Favorites({
             padding: 0,
           },
         }}
-        label="Lempparit"
+        value="Lempparit"
       >
         <MaterialGrid>
           {materials && materials[0] && materials.map((item) => (

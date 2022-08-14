@@ -12,7 +12,7 @@ import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import LightModeTwoToneIcon from '@mui/icons-material/LightModeTwoTone';
 import LightModeIcon from '@mui/icons-material/LightMode';
 
-import { useQueryClient } from 'react-query';
+import { useQueryClient } from '@tanstack/react-query';
 import Materials from '../components/Materials';
 import extensionStore from '../Stores/ExtensionStore';
 import { useFavorites } from '../hooks/useFavorites';
@@ -35,7 +35,7 @@ function MainPage() {
   const { fav, addFavorite } = useFavorites()
 
   function refresh() {
-    queryClient.resetQueries('materiaalit')
+    queryClient.resetQueries(['materiaalit'])
   }
 
   const inPopup = window.location.search.includes('popup')

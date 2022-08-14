@@ -1,6 +1,6 @@
 {
    "description":"Sanomapro sanastot applikaation sanastot kätevästi chrome selaimessa.",
-   "version":"5.0.0",
+   "version":"5.2.1",
    "manifest_version":2 ,
    "name":"Sanastot",
    "browser_action": {

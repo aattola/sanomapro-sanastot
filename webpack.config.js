@@ -5,8 +5,11 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin');
 const env = require('./utils/env');
 const package = require('./package.json')
+const { dependencies } = require('./package.json');
 
 const ASSET_PATH = process.env.ASSET_PATH || '/';
 
@@ -156,15 +159,6 @@ const options = {
     new CopyWebpackPlugin({
       patterns: [
         {
-          from: 'src/assets/img/damn.mp4',
-          to: path.join(__dirname, 'build'),
-          force: true,
-        },
-      ],
-    }),
-    new CopyWebpackPlugin({
-      patterns: [
-        {
           from: 'src/assets/worker.js',
           to: path.join(__dirname, 'build'),
           force: true,
@@ -250,6 +244,7 @@ const options = {
       NODE_ENV: JSON.stringify(process.env.NODE_ENV || 'development'),
       version: JSON.stringify(package.version),
     }),
+    // new BundleAnalyzerPlugin(),
   ],
   infrastructureLogging: {
     level: 'info',
